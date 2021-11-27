@@ -6,17 +6,15 @@ import clases from "./SiteBarMenu.module.css";
 const SiteBarMeny = () => {
   return (
     <div>
-      <button className="SiteBarMeny" href="#">
+      <a className="SiteBarMeny" href="#">
         <div className="SiteBarIcons">
-          {" "}
           <img src={imgName} className={clases.imgIcon} />
         </div>
         <div className="SiteBarMenyT">груминг</div>
-      </button>
+      </a>
 
       <button className="SiteBarMeny" href="#">
         <div className="SiteBarIcons">
-          {" "}
           <img src={imgName2} className={clases.imgIcon} />
         </div>
         <div className="SiteBarMenyT">прайс</div>
@@ -24,7 +22,6 @@ const SiteBarMeny = () => {
 
       <button className="SiteBarMeny" href="#">
         <div className="SiteBarIcons">
-          {" "}
           <img
             src="https://image.flaticon.com/icons/png/512/964/964016.png"
             alt=""
@@ -36,7 +33,6 @@ const SiteBarMeny = () => {
 
       <button className="SiteBarMeny" href="#">
         <div className="SiteBarIcons">
-          {" "}
           <img
             src="https://w7.pngwing.com/pngs/871/595/png-transparent-customer-review-information-others-hand-service-logo.png"
             alt=""

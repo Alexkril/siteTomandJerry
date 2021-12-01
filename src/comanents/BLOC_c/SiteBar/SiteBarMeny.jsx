@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import imgName from "../../../assets/img/img.png";
 import imgName2 from "../../../assets/img/img2.png";
 import imgName3 from '../../../assets/img/img3.png';
@@ -11,9 +12,9 @@ const SiteBarMeny = () => {
     <div>
       <button className="SiteBarMeny" >
         <div className="SiteBarIcons">
-          <img src={imgName5} className={clases.imgIcon} />
+          <img src={imgName5} className={clases.imgIcon} alt='' />
         </div>
-        <a className="SiteBarMenyT" href='/'>главная</a>
+        <Link className="SiteBarMenyT" to='/'>главная</Link>
       </button>
 
 
@@ -21,9 +22,9 @@ const SiteBarMeny = () => {
       <button className="SiteBarMeny" >
 
         <div className="SiteBarIcons">
-          <img src={imgName} className={clases.imgIcon} />
+          <img src={imgName} className={clases.imgIcon} alt='' />
         </div>
-        <a href='/' className="SiteBarMenyT">груминг</a>
+        <Link to='/page4' className="SiteBarMenyT">груминг</Link>
       </button>
 
 
@@ -32,9 +33,9 @@ const SiteBarMeny = () => {
       <button className="SiteBarMeny" >
         <div className="SiteBarIcons">
 
-          <img src={imgName2} className={clases.imgIcon} />
+          <img src={imgName2} className={clases.imgIcon} alt='' />
         </div>
-        <a href="/" className="SiteBarMenyT">прайс</a>
+        <Link to="/page2" className="SiteBarMenyT">прайс</Link>
       </button>
 
       <button className="SiteBarMeny" >
@@ -46,7 +47,7 @@ const SiteBarMeny = () => {
             width="30"
           />
         </div>
-        <a className="SiteBarMenyT" href="/" >галерея</a>
+        <Link className="SiteBarMenyT" to="/page4" >галерея</Link>
       </button>
 
       <button className="SiteBarMeny" >
@@ -58,7 +59,7 @@ const SiteBarMeny = () => {
             width="30"
           />
         </div>
-        <a className="SiteBarMenyT" href="/">отзывы</a>
+        <Link className="SiteBarMenyT" to="/page3">отзывы</Link>
       </button>
 
 

@@ -1,17 +1,11 @@
 import React from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-
 import "./App.css";
 import Conteiners from "./comanents/Conteiners.jsx";
 
-const App = () => {
+const App = (props) => {
   return (
     <div className="BlockContent">
-      <BrowserRouter>
-        <Routes>
-          <Route component={Conteiners} />
-        </Routes>
-      </BrowserRouter>
+      <Conteiners ClientRevievs={props.ClientRevievs}/>
     </div>
   );
 };

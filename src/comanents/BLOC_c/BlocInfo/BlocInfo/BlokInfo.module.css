@@ -1,0 +1,13 @@
+.BlokInfo {
+    margin: 0 auto;
+    border: 1px solid hsl(254, 33%, 8%);
+}
+.BlokInfo img{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    border: tomato solid 1px;
+    
+}
+

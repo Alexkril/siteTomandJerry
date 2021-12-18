@@ -1,9 +1,10 @@
 .Footer{
     margin: 0 auto;
+    z-index: 1;
     padding-top: 15px;
     padding-bottom: 15px;
     grid-area: Footer;
-    background: rgb(120, 232, 240);
+    background: #9f9ffa;
     min-height: 10px;
     text-align: center;
     height: auto;

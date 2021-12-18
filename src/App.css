@@ -3,7 +3,7 @@
   padding: 10px 10px;
   max-width: 100%;
   height: auto;
-  background: #b3b3ff;
+  background: #d1d1d1;
 
 }
 
@@ -21,76 +21,29 @@
 }
 
 /*---- Heder-----------------*/
-.Heder {
-  width: 100%;
-  margin: 0 auto;
-  grid-area: Heder;
-  background: rgb(200, 200, 201);
-  top: 100px;
-  height: auto;
-  min-height: 35px;
-}
-
-.HederCont {
-  display: flex;
-  justify-content: center;
-  background-color: #c9fbfd;
-  padding: 0 30px;
-}
-
-.Heder img {
-  margin: 0 auto;
-  width: 200px;
-  align-items: center;
-}
 
 /*---- SiteBar-----------------*/
 .SiteBar {
   position: sticky;
-   top: 100px;
+  top: 100px;
+  z-index: 0;
   grid-area: SiteBar;
   margin: 0 auto;
   min-width: 150px;
-
-  border: 1px solid red;
+  height: 160px;
+ background: rgb(191, 213, 250);
   align-items: center;
+  padding-bottom: 420px;
 }
 
-.SiteBarMeny {
-  margin: 10px auto;
-  display: flex;
-  justify-content: space-between;
-  min-width: 100px;
-  width: 140px;
-  height: auto;
-  border: transparent;
-  border-radius: 3px;
-  opacity: 0.8;
-  align-items: center;
-  color: red;
 
-  padding: 5px 10px;
-  background: hsl(0, 0%, 91%);
-}
-
-.SiteBarMeny:hover {
-  border: 1px solid red;
-  opacity: 1;
-}
 
 .SiteBarIcons {
   padding: 0 15px 0 0;
   width: 30px;
 }
 
-.SiteBarMenyT {
-  color: darkblue;
-  text-align: center;
-  font-size: 16px;
-  text-transform: uppercase;
-  padding: 0 3px 0 0;
-  text-decoration: none;
-}
+
 
 
 .Cosialicons {
@@ -127,6 +80,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px;
 }
 
 .BlocFotoItem {
@@ -136,3 +90,14 @@
   padding: 4px 4px;
 }
 
+.Avatar img{
+  width: 25px;
+ }
+ .BlokInfoFoto img{
+
+width: 200px;
+ }
+ .AvatarS img{
+width: 25px;
+ }
+ 

@@ -1,4 +1,46 @@
+.SiteBarMeny {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  min-width: 100px;
+  width: 140px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  opacity: 0.8;
+  align-items: center;
+  color: red;
+  box-shadow: 2px 2px darkorange;
+  padding: 5px 10px;
+  background: rgb(232, 232, 232);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.SiteBarMeny:hover {
+  border: 1px solid red;
+  opacity: 1;
+}
+
+.SiteBarMeny:visited {
+  color: #ff0202;
+  background: rgb(165, 156, 95);
+}
+
 .imgIcon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.SiteBarMenyT {
+  color: #4343e9;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0 3px 0 0;
+  text-decoration: none;
+}
+
+.SiteBarMenyT.active button {
+  color: gold;
+  background: gold;
 }

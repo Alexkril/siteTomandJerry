@@ -1,0 +1,39 @@
+.Dialogs {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 5fr;
+    background: rgb(159, 159, 250);
+    text-decoration: none;
+
+}
+
+.Dialogs img {
+    width: 25px;
+}
+
+.DialogItems .Dialog {
+    padding: 10px;
+    color: #fdfdfd;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.DialogItems:hover{
+    color: darkorange;
+}
+.DialogItems .active {
+
+    color: hsl(64, 98%, 48%);
+    
+}
+
+.messades {
+    border: springgreen solid 1px;
+    background: steelblue;
+    padding: 10px;
+}
+
+
+.messade {
+    color: #fdfdfd;
+    padding: 5px;
+}

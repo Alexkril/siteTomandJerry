@@ -5,9 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
+let ClientRevievs = [
+  { id: 1, ClientReviev: "спасибо? были у вас в прощсе отлично" },
+];
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App ClientRevievs={ClientRevievs} />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

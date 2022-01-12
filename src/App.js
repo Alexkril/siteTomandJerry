@@ -1,17 +1,29 @@
 import React from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-
-import "./App.css";
+import "./App.scss";
 import Conteiners from "./comanents/Conteiners.jsx";
 
-const App = () => {
+const App = (props) => {
+
   return (
     <div className="BlockContent">
-      <BrowserRouter>
-        <Routes>
-          <Route component={Conteiners} />
-        </Routes>
-      </BrowserRouter>
+      <Conteiners
+        ClientRevievs={props.state.ClientRevievs}
+        postRev={props.state.postRev}
+        massedesData={props.state.massedesData}
+        DialogsData={props.state.DialogsData}
+        GrumTebl={props.state.GrumTebl}
+        testmassegeData={props.state.addTest1.testmassegeData}
+        addGrumTebl={props.addGrumTebl}
+        addtestmassegeData={props.addtestmassegeData}
+        onChengeMasse={props.state.onChengeMasse}
+        MassegeTest3Data={props.state2.MassegeTest3Data}
+        TestvDate={props.state2.TestvDate}
+        addtestDate={props.addtestDate}
+        addMessDialog ={props.addMessDialog}
+        nevTextTest1={props.nevTextTest1}
+      />
+
+
     </div>
   );
 };

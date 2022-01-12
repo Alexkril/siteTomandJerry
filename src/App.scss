@@ -1,0 +1,71 @@
+.BlockContent {
+  margin: 0 auto;
+  padding: 10px 10px;
+  max-width: 100%;
+  height: auto;
+  background: #d1d1d1;
+
+}
+
+/*---- Conteiners-----------------*/
+
+
+
+
+
+
+.Cosialicons {
+  padding: 30px 3px;
+  opacity: 0.8;
+}
+
+.Cosialicons:hover {
+  opacity: 1.5;
+}
+
+.Pr {
+  color: #353533;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ClassTvari {
+  width: 400px;
+}
+
+.ClassTvariBlock {
+  padding: 10px 0 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid hsl(0, 100%, 50%);
+  padding-left: 5px;
+  color: rgb(7, 0, 0);
+  width: 380px;
+}
+
+.PriceConteyBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.BlocFotoItem {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 4px;
+}
+
+.Avatar img{
+  width: 25px;
+ }
+ .BlokInfoFoto img{
+width: 200px;
+ }
+
+ .AvatarS img{
+width: 25px;
+ }
+ 

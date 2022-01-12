@@ -1,0 +1,9 @@
+.test213{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    color: hsl(147, 80%, 23%);
+    border: coral solid 1px;
+    gap: 15px;
+    grid-area: auto;
+}

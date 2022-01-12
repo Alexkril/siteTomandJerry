@@ -1,16 +1,17 @@
 import React from "react";
-import clases from './PriceFoto.module.css';
+import clases from './PriceFoto.module.scss';
+import imgPrFoto from './../../../assets/galery/y5.jpg'
+
 const PriceFoto = () => {
-return(
-    <div className={clases.PriceFoto}>
-    <span>
-    <img src="https://sobaky.info/wp-content/uploads/2018/01/y5.jpg" alt="rf" />
-    <img src="https://belvet.ua/content/uploads/images/33667.jpg" alt="rf" />
-    <img src="https://www.pedigree.ru/uploads/images/wiki/malteze_zabolevaniya.jpg" alt="rf" />
-    </span>
-       
-    </div>
-);
+    return (
+        <div className={clases.PriceFoto}>
+<img src={imgPrFoto} alt="" />
+           
+                
+           
+
+        </div>
+    );
 
 }
 export default PriceFoto;

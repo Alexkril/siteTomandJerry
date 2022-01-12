@@ -1,6 +1,6 @@
 import React from "react";
 import BlocFotoItem from './BlocFotoItem/BlokFotoItem.jsx'
-import clases from './../BlockFoto/../../BlocInfo/BlockFoto/BlokFoto.module.css'
+import clases from './../BlockFoto/BlokFoto.module.css'
 
 const BlokFoto = () => {
     return (

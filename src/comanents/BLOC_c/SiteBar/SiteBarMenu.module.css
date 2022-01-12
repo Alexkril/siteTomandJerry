@@ -1,4 +1,45 @@
-.imgIcon {
-  width: 20px;
-  height: 20px;
+.SiteBarMeny {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  min-width: 100px;
+  width: 140px;
+  
+  border: transparent;
+  border-radius: 3px;
+  opacity: 0.8;
+  align-items: center;
+  color: red;
+box-shadow: 2px 2px darkorange;
+  padding: 5px 10px;
+  background: hsl(0, 0%, 91%);
 }
+
+.SiteBarMeny:hover {
+  border: 1px solid red;
+  opacity: 1;
+}
+.SiteBarMeny:active{
+  color: gold;
+  background: gold;
+
+}
+.SiteBarMeny:visited{
+  color: #ff0202;
+  background: hsl(52, 28%, 51%);
+}
+
+.imgIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.SiteBarMeny .SiteBarMenyT {
+  color: #4343e9;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0 3px 0 0;
+  text-decoration: none;
+}
+ 

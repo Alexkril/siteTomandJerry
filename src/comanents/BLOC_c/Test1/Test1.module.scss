@@ -1,0 +1,13 @@
+.Test1{
+    display: grid;
+    grid-template-rows: 2fr 10fr;
+    grid-template-columns: 1fr 2fr ;
+    color: darkblue;
+    margin: 10px 10px 10px 10px;
+}
+.Test1 button{
+    margin: 10px;
+}
+.Test1 textarea{
+    margin: 5px;
+}

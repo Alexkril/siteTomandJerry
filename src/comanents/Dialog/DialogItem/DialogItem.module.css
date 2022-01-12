@@ -1,0 +1,20 @@
+.DialogItem{
+    padding: 15px 0 5px 20px;
+    
+    color: crimson;
+}
+.DialogItem a{
+    color: brown;
+    text-decoration: none;
+    
+}
+.DialogItem a:hover{ 
+    color: #c7d63b;
+    text-decoration: none;
+    
+}
+.DialogItem a:active{ 
+    color: #010c47;
+    text-decoration: none;
+    
+}

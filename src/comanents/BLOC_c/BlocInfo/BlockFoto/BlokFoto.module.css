@@ -1,14 +1,19 @@
 .BlokFoto{
-   
+    
     margin: 0 auto;
     grid-area: BlokFoto;
     text-align: center;
-    background: #f3afd1;
+    background: rgb(191, 213, 250);
     height: auto;
-    min-width: 250px;
+    width: 250px;
     text-transform: uppercase;
-    padding: 10px 10px;
+    padding: 5px 5px ;
+    padding-right: 5px;
 }
 .BlokFoto img{
-    width: 100px;
+    width:120px;
+}
+.BlokFoto img:hover{
+    width:500;
+
 }

@@ -1,0 +1,12 @@
+
+    .Conteiners {
+        position: relative;
+        display: grid;
+        grid-template-areas:
+          "Heder Heder Heder"
+          "SiteBar BlokInfo BlokFoto"
+          "Footer Footer Footer";
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 6fr 1fr;
+        gap: 5px;
+      }

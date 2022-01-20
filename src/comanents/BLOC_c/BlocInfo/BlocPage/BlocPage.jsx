@@ -52,8 +52,7 @@ const BlocPage = (props) => {
                 </Routes>
 
 
-                {/* <Route path="/Test2/" element={<Test2 GrumTebl={props.GrumTebl}
-                        addGrumTebl={props.addGrumTebl} />} /> */}
+            
 
 
             </div>

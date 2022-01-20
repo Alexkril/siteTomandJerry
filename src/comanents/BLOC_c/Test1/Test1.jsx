@@ -3,7 +3,7 @@ import clases from './Test1.module.scss';
 import AddMasseges from "./AddMassege/AddMasseges";
 
 const Test1 = (props) => {
-    
+
 
     let addMassegeg = React.createRef();
     let addtext = () => {
@@ -15,11 +15,7 @@ const Test1 = (props) => {
         props.nevTextTest1(addMassegeg.current.value)
 
     }
-    let onChengeMasse = () => {
-        let Text2 = AddMassegeg.current.value;
-        props.nevTextTest1(Text2);
-       
-    }
+
 
     return (
         <div className={clases.Test1}>

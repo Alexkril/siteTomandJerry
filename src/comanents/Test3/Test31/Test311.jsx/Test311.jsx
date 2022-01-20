@@ -8,7 +8,7 @@ return( <div>{props.todo} {props.time} {props.day}</div> )
 
 const Test311 =(props)=>{
 
-let TestVElement=props.TestvDate
+let TestVElement=props.testvDate
 .map((v)=><Testtext todo={v.todo} time={v.time} day={v.day} id={v.id}/>)
 
     return (

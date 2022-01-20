@@ -25,10 +25,12 @@ const Conteiners = (props) => {
                 addtestmassegeData={props.addtestmassegeData}
                 onChengeMasse={props.testmassegeData.onChengeMasse}
                 MassegeTest3Data={props.MassegeTest3Data}
-                TestvDate={props.TestvDate}
+                testvDate={props.testvDate}
                 addtestDate={props.addtestDate}
                 addMessDialog ={props.addMessDialog}
                 nevTextTest1={props.nevTextTest1}
+                addTextTest3={props.addTextTest3}
+                test3OnText={props.test3OnText}
             />
 
             <BlokFoto />

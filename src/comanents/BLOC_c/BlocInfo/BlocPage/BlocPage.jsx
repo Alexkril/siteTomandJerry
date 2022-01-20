@@ -12,13 +12,9 @@ import Test2 from "../../..//Test2/Test2";
 import Test3 from "../../../Test3/Test3";
 
 const BlocPage = (props) => {
-
     return (
 
         <div className={clases.BlocInfoPage}>
-
-
-
             <div>
                 <Routes>
                     <Route path="/" element={<BlokInfo />} />
@@ -33,28 +29,33 @@ const BlocPage = (props) => {
                         DialogsData={props.DialogsData}
                         addMessDialog={props.addMessDialog}
                     />} />
-
-                </Routes>
-                <Routes>
                     <Route path="/Test1/" element={<Test1
                         testmassegeData={props.testmassegeData}
                         addtestmassegeData={props.addtestmassegeData}
                         onChengeMasse={props.testmassegeData.onChengeMasse}
-                        nevTest1 ={ props.nevTest1}
+                        nevTest1={props.nevTest1}
                         nevTextTest1={props.nevTextTest1}
                     />} />
+                    {/* <Route path='/Test3/' element={<Test3
+                        MassegeTest3Data={props.MassegeTest3Data}
+                        testvDate={props.testvDate}
+                        addtestDate={props.addtestDate}
+                        addTextTest3 ={props.addTextTest3}
+                        test3OnText={props.test3OnText}
 
-                    {/* <Route path="/Test2/" element={<Test2 GrumTebl={props.GrumTebl}
-                        addGrumTebl={props.addGrumTebl} />} />
-
-                    <Route path='/Test3/' element={<Test3
-                            MassegeTest3Data={props.MassegeTest3Data}
-                            TestvDate={props.TestvDate}
-                            addtestDate={props.addtestDate}
-                            
-                        />}
+                        
+                    />}
                     /> */}
+
+
+
                 </Routes>
+
+
+                {/* <Route path="/Test2/" element={<Test2 GrumTebl={props.GrumTebl}
+                        addGrumTebl={props.addGrumTebl} />} /> */}
+
+
             </div>
 
         </div>

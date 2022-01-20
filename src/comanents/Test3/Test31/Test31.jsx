@@ -6,20 +6,23 @@ const Test31 = (props) => {
 
     let Box = React.createRef();
     let But = () => {
-        
         let Mass = Box.current.value
         props.addtestDate(Mass);
-        Box.current.value='';
+    };
+
+    let test3Text = () => {
+        props.addTextTest3(Box.current.value)
     }
 debugger
     return (
         <div className={clases.test31}>
             <div>test 31</div>
-            <Test311 TestvDate={props.TestvDate}/>
+            <Test311 testvDate={props.testvDate} />
 
-
-            <textarea ref={Box} ></textarea>
-            <div><button onClick={But}>b</button></div>
+            <textarea onChange={test3Text} ref={Box}
+                value={props.test3OnText}
+                placeholder="Введите текст" ></textarea>
+            <div><button onClick={But}>push</button></div>
 
         </div>
     );

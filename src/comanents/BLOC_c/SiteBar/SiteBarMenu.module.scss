@@ -4,13 +4,13 @@
   justify-content: space-between;
   min-width: 100px;
   width: 140px;
-  
+
   border: transparent;
   border-radius: 3px;
   opacity: 0.8;
   align-items: center;
   color: red;
-box-shadow: 2px 2px darkorange;
+  box-shadow: 2px 2px darkorange;
   padding: 5px 10px;
   background: hsl(0, 0%, 91%);
 }
@@ -19,12 +19,11 @@ box-shadow: 2px 2px darkorange;
   border: 1px solid red;
   opacity: 1;
 }
-.SiteBarMeny:active{
+.SiteBarMeny:active {
   color: gold;
   background: gold;
-
 }
-.SiteBarMeny:visited{
+.SiteBarMeny:visited {
   color: #ff0202;
   background: hsl(52, 28%, 51%);
 }
@@ -34,12 +33,38 @@ box-shadow: 2px 2px darkorange;
   height: 30px;
 }
 
-.SiteBarMeny .SiteBarMenyT {
+.SiteBarMenyT {
   color: #4343e9;
   text-align: center;
   font-size: 16px;
   text-transform: uppercase;
-  padding: 0 3px 0 0;
+  padding: 5px;
   text-decoration: none;
 }
- 
+.siteBarIcon {
+  margin-left: 6px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  min-width: 100px;
+  width: 133px;
+  border: transparent;
+  border-radius: 3px;
+  opacity: 0.8;
+  background: hsl(0, 0%, 91%);
+  padding: 2px;
+  box-shadow: 2px 2px darkorange;
+  
+}
+.siteBarIcon:hover {
+  border: 1px solid red;
+  opacity: 1;
+}
+.siteBarIcon:active {
+  color: gold;
+  background: gold;
+}
+.siteBarIcon:visited {
+  color: #ff0202;
+  background: hsl(52, 28%, 51%);
+}

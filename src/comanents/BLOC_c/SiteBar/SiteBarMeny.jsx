@@ -7,29 +7,28 @@ import imgName4 from '../../../assets/img/img4.png';
 import imgName5 from '../../../assets/img/img5.png';
 import imgName6 from '../../../assets/img/img6.jpg';
 import imgL from './../../../assets/img/len.jpg';
-import clases from "./SiteBarMenu.module.css";
+import clases from "./SiteBarMenu.module.scss";
 import { NavLink } from "react-router-dom";
 
 const SiteBarMeny = () => {
   return (
     <div>
-      <button className={clases.SiteBarMeny} >
-        <div className="SiteBarIcons">
+
+      <NavLink className={clases.SiteBarMenyT} to='/'>
+        <div className={clases.siteBarIcon}>
           <img src={imgName5} className={clases.imgIcon} alt='' />
+          <span>главная</span>
         </div>
-        <NavLink className={clases.SiteBarMenyT} to='/'>главная</NavLink>
-      </button>
 
+      </NavLink>
 
-
-      <button className={clases.SiteBarMeny} >
-
-        <div className="SiteBarIcons">
-          <img src={imgName} className={clases.imgIcon} alt='' />
-        </div>
-        <NavLink to='/Grum' className={clases.SiteBarMenyT}>груминг</NavLink>
-      </button>
-
+      
+<NavLink to='/Grum' className={clases.SiteBarMenyT}>
+        <div className={clases.siteBarIcon}>
+          <img src={imgName} className={clases.imgIcon} alt='' /> 
+       <span>груминг</span> </div>
+</NavLink>
+     
 
       <button className={clases.SiteBarMeny} >
         <div className="SiteBarIcons">
@@ -102,7 +101,7 @@ const SiteBarMeny = () => {
         <NavLink className={clases.SiteBarMenyT} to="/Test2">test2</NavLink>
       </button> */}
 
-      {/* <button className={clases.SiteBarMeny} >
+      <button className={clases.SiteBarMeny} >
         <div className="SiteBarIcons">
 
           <img
@@ -112,7 +111,7 @@ const SiteBarMeny = () => {
           />
         </div>
         <NavLink className={clases.SiteBarMenyT} to="/Test3">test3</NavLink>
-      </button> */}
+      </button>
 
 
     </div>

@@ -1,24 +1,38 @@
+
+let rerenderIntareTree = () => {
+  
+}
 let state2 = {
    
-
-    TestvDate: [
-        { id: 1, todo: 'стрижка', time: 'время стрижки', day: 'дата' },
-        { id: 2, todo: 'стрижка хвост', time: '2 часа', day: 'понед' }
+    testvDate: [
+        { id: 1, todo: 'стрижка',  },
+        
     ],
+    test3OnText:""
 }
 
-   
-
-
-export let addtestDate = (nevTestDate) => {
+export let addtestDate = (text) => {
     let testDate = {
-        id: 1,
-        todo: nevTestDate,
-        time: 'время стрижки',
-        day: 'дата'
+        id: Math.random(),
+        todo: text,
+       
     }
-    state2.TestvDate.push(testDate)
+    state2.testvDate.push(testDate)
+    rerenderIntareTree(state2)
+
 }
+
+export const addTextTest3=(text)=>{
+    state2.test3OnText.push = text;
+
+    rerenderIntareTree(state2)
+}
+
+
+
+
+export const subscribe2=(observer2)=>{
+    rerenderIntareTree = observer2;
+}
+
 export default state2;
-// return( <div>{props.todo} {props.time} {props.day}</div> )
-// }

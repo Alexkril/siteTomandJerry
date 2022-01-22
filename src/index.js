@@ -9,6 +9,7 @@ import {subscribe2} from "./state2";
 import {addTextTest3, addtestDate} from "./state2";
 
 let rerenderIntareTree = (state) => {
+  
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
@@ -16,11 +17,11 @@ let rerenderIntareTree = (state) => {
         <App state={state}
           state2={state2}
           addGrumTebl={store.addGrumTebl}
-          addtestmassegeData={store.addtestmassegeData.bind(store)}
+          dispatch={store.dispatch.bind(store)}
           addtestDate={addtestDate}
           addMessDialog={store.addMessDialog}
           postRev={store.postRev}
-          nevTextTest1={store.nevTextTest1.bind(store)}
+         // nevTextTest1={store.nevTextTest1.bind(store)}
           addTextTest3 ={addTextTest3}
           
         />

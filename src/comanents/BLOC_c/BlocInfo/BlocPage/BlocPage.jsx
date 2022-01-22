@@ -12,6 +12,7 @@ import Test2 from "../../..//Test2/Test2";
 import Test3 from "../../../Test3/Test3";
 
 const BlocPage = (props) => {
+    
     return (
 
         <div className={clases.BlocInfoPage}>
@@ -31,10 +32,12 @@ const BlocPage = (props) => {
                     />} />
                     <Route path="/Test1/" element={<Test1
                         testmassegeData={props.testmassegeData}
-                        addtestmassegeData={props.addtestmassegeData}
+                        //addtestmassegeData={props.addtestmassegeData}
+                        //nevTextTest1={props.nevTextTest1}
+                        dispatch={props.dispatch}
                         onChengeMasse={props.testmassegeData.onChengeMasse}
                         nevTest1={props.nevTest1}
-                        nevTextTest1={props.nevTextTest1}
+                        
                     />} />
                     {/* <Route path='/Test3/' element={<Test3
                         MassegeTest3Data={props.MassegeTest3Data}

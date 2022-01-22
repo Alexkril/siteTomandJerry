@@ -3,6 +3,7 @@ import "./App.scss";
 import Conteiners from "./comanents/Conteiners.jsx";
 
 const App = (props) => {
+
   return (
     <div className="BlockContent">
       <Conteiners
@@ -13,15 +14,15 @@ const App = (props) => {
         GrumTebl={props.state.GrumTebl}
         testmassegeData={props.state.addTest1}
         addGrumTebl={props.addGrumTebl}
-        addtestmassegeData={props.addtestmassegeData}
         onChengeMasse={props.state.onChengeMasse}
         MassegeTest3Data={props.state2.MassegeTest3Data}
         testvDate={props.state2.testvDate}
         addtestDate={props.addtestDate}
         addMessDialog={props.addMessDialog}
-        nevTextTest1={props.nevTextTest1}
-        addTextTest3 ={props.addTextTest3}
+        addTextTest3={props.addTextTest3}
         test3OnText={props.state2}
+        dispatch={props.dispatch}
+      //nevTextTest1={props.nevTextTest1}
       />
 
 

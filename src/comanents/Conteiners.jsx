@@ -22,15 +22,18 @@ const Conteiners = (props) => {
                 GrumTebl={props.GrumTebl}
                 testmassegeData={props.testmassegeData}
                 addGrumTebl={props.addGrumTebl}
-                addtestmassegeData={props.addtestmassegeData}
+
                 onChengeMasse={props.testmassegeData.onChengeMasse}
                 MassegeTest3Data={props.MassegeTest3Data}
                 testvDate={props.testvDate}
                 addtestDate={props.addtestDate}
-                addMessDialog ={props.addMessDialog}
-                nevTextTest1={props.nevTextTest1}
+                addMessDialog={props.addMessDialog}
+
                 addTextTest3={props.addTextTest3}
                 test3OnText={props.test3OnText}
+                //addtestmassegeData={props.addtestmassegeData}
+                //nevTextTest1={props.nevTextTest1}
+                dispatch={props.dispatch}
             />
 
             <BlokFoto />

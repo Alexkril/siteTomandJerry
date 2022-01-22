@@ -7,15 +7,16 @@ const Test1 = (props) => {
 
     let addMassegeg = React.createRef();
     let addtext = () => {
-        props.addtestmassegeData(addMassegeg.current.value)
-        props.testmassegeData.nevTest1 = ''
+        props.dispatch({ type: "ADD-TEST-MASSEGEDATA" })
+
     }
 
     let onChengeMassege = () => {
-        props.nevTextTest1(addMassegeg.current.value)
-
+        let nevText = addMassegeg.current.value
+        let onChengeMassegeAchen = { type: "NEV-TEXT-TEST1", nevText }
+        props.dispatch(onChengeMassegeAchen)
+       // props.dispatch({ type: "NEV-TEXT-TEST1", nevText })
     }
-
 
     return (
         <div className={clases.Test1}>

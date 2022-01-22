@@ -1,8 +1,6 @@
 const store = {
 
   state: {
-
-
     ClientRevievs: [{ id: 1, ClientReviev: 'спасибо? были у вас в прощсе отлично' },],
 
     massedesData: [
@@ -28,9 +26,13 @@ const store = {
 
     ],
 
+
     addTest1: {
       testmassegeData: [
-        { id: Math.random(), testmassege: 'строка сообщений тест 1', },
+        {
+          id: Math.random(),
+          testmassege: 'строка сообщений тест 1',
+        },
       ],
       nevTest1: ''
     }
@@ -40,20 +42,38 @@ const store = {
     return this.state;
   },
 
-  addtestmassegeData(text) {
-    let massege = {
-      id: Math.random(),
-      testmassege: text
+  dispatch(action) {
+    
+    if (action.type === "ADD-TEST-MASSEGEDATA") {
+      let massege = {
+        id: Math.random(),
+        testmassege: this.state.addTest1.nevTest1,
+      }
+      this.state.addTest1.testmassegeData.push(massege);
+      this.state.addTest1.nevTest1 = "";
+      this._collSubscriber(this.state);
     }
-    this.state.addTest1.testmassegeData.push(massege)
-    this._collSubscriber(this.state)
+    else if (action.type === "NEV-TEXT-TEST1") {
+      this.state.addTest1.nevTest1 = action.nevText;
+      this._collSubscriber(this.state)
+    }
   },
 
-  nevTextTest1(text) {
-    this.state.addTest1.nevTest1 = text;
 
-    this._collSubscriber(this.state)
-  },
+  // addtestmassegeData(text) {
+  //   let massege = {
+  //     id: Math.random(),
+  //     testmassege: text
+  //   }
+  //   this.state.addTest1.testmassegeData.push(massege)
+  //   this._collSubscriber(this.state)
+  // },
+
+  // nevTextTest1(text) {
+  //   this.state.addTest1.nevTest1 = text;
+
+  //   this._collSubscriber(this.state)
+  // },
 
   // addGrumTebl  (GrumTebl)  {
 

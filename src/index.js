@@ -6,10 +6,10 @@ import store from "./state";
 import { BrowserRouter } from "react-router-dom";
 import state2 from './state2';
 import {subscribe2} from "./state2";
-import {addTextTest3, addtestDate} from "./state2";
+import {addTextTest3, addtestDate,  } from "./state2";
 
 let rerenderIntareTree = (state) => {
-  
+ 
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
@@ -23,7 +23,7 @@ let rerenderIntareTree = (state) => {
           postRev={store.postRev}
          // nevTextTest1={store.nevTextTest1.bind(store)}
           addTextTest3 ={addTextTest3}
-          
+          addMessDialog={state2.addMessDialog}
         />
       </BrowserRouter>
     </React.StrictMode>,

@@ -9,7 +9,7 @@ const App = (props) => {
       <Conteiners
         ClientRevievs={props.state.ClientRevievs}
         postRev={props.state.postRev}
-        massedesData={props.state.massedesData}
+        massedesData={props.state2.dialogPage.massedesData}
         DialogsData={props.state.DialogsData}
         GrumTebl={props.state.GrumTebl}
         testmassegeData={props.state.addTest1}
@@ -23,6 +23,11 @@ const App = (props) => {
         test3OnText={props.state2}
         dispatch={props.dispatch}
       //nevTextTest1={props.nevTextTest1}
+      addMessDialog={props.addMessDialog}
+      nevMassegeDate={props.nevMassegeDate}
+      nevNextDialog={props.nevNextDialog}
+     addPageMassege={props.state2.dialogPage}
+
       />
 
 

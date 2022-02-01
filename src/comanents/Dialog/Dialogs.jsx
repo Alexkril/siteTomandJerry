@@ -1,6 +1,7 @@
 import React from "react";
 import clases from '../Dialog/Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
+import { nevTextDialogActionCreaator, nevMassegeDateActionCreaator } from "../../state";
 
 // const DialogItem = (props) => {
 
@@ -26,15 +27,6 @@ const Massedes = (props) => {
 
 const Dialogs = (props) => {
 
-    let Ad = React.createRef();
-
-    let testText = () => {
-        
-        let addText = Ad.current.value;
-        props.addMessDialog(addText);
-        Ad.current.value='';
-    }
-
     let massedesElement = props.massedesData
         .map((massedges) => <Massedes massedes={massedges.massedes} />)
 
@@ -42,19 +34,34 @@ const Dialogs = (props) => {
         .map((Dialog) => <DialogItem name={Dialog.name} id={Dialog.id} />)
 
 
+
+    let Ad = React.createRef();
+    let text = () => {
+        props.dispatch(nevMassegeDateActionCreaator())
+
+    }
+
+    let addMassage = () => {
+        let text = Ad.current.value;
+        let nevTextDialogAction = nevTextDialogActionCreaator(text)
+        props.dispatch(nevTextDialogAction);
+    }
+
+debugger
     return (
         <div className={clases.Dialogs}>
-
             <div className={clases.DialogItems}>
-                {DialogsElenent}
-            </div>
+                {DialogsElenent}</div>
 
             <div className={clases.messades}>
                 {massedesElement}
                 <div>
-                    <textarea ref={Ad}> </textarea>
+                    <textarea ref={Ad} onChange={addMassage}
+                        value={props.addPageMassege.addPageMassege}
+                        placeholder="текст"
+                    />
                     <div>
-                        <button onClick={testText}>отправить сообщение</button>
+                        <button onClick={text}>отправить сообщение</button>
                     </div>
                 </div>
             </div>

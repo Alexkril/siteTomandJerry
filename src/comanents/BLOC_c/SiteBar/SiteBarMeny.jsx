@@ -22,97 +22,61 @@ const SiteBarMeny = () => {
 
       </NavLink>
 
-      
-<NavLink to='/Grum' className={clases.SiteBarMenyT}>
+      <NavLink to='/Grum' className={clases.SiteBarMenyT}>
         <div className={clases.siteBarIcon}>
-          <img src={imgName} className={clases.imgIcon} alt='' /> 
-       <span>груминг</span> </div>
-</NavLink>
-     
+          <img src={imgName} className={clases.imgIcon} alt='' />
+          <span>груминг</span> </div>
+      </NavLink>
 
-      <button className={clases.SiteBarMeny} >
-        <div className="SiteBarIcons">
-
+      <NavLink to="/Price" className={clases.SiteBarMenyT}>
+        <div className={clases.siteBarIcon}>
           <img src={imgName2} className={clases.imgIcon} alt='' />
+          <span>прайс</span>
         </div>
-        <NavLink to="/Price" className={clases.SiteBarMenyT}>прайс</NavLink>
-      </button>
+      </NavLink>
 
-      {/* <button className={clases.SiteBarMeny} >
-        <div className="SiteBarIcons">
+      {/* <NavLink className={clases.SiteBarMenyT} to="/Galereya" >
+        <div className={clases.siteBarIcon}>
+          <img src={imgName3} className={clases.imgIcon} />
+          <span>галерея</span>
+        </div>
+      </NavLink>
 
+      <NavLink className={clases.SiteBarMenyT} to="/Reviews">
+        <div className={clases.siteBarIcon}>
+          <img src={imgName4} className={clases.imgIcon} />
+          <span>отзывы</span>
+        </div>
+      </NavLink> */}
+
+      <NavLink className={clases.SiteBarMenyT} to="/Dialogs">
+        <div className={clases.siteBarIcon}>
+          <img src={imgName6} className={clases.imgIcon} />
+          <span>ЧАТ</span>
+        </div>
+      </NavLink>
+
+      <NavLink className={clases.SiteBarMenyT} to="/Test1">
+        <div className={clases.siteBarIcon}>
+          <img src={imgName6} className={clases.imgIcon} />
+          <span>test</span>
+        </div>
+      </NavLink>
+
+      {/* <NavLink className={clases.SiteBarMenyT} to="/Test2">
+        <div className={clases.siteBarIcon}>
+          <img src={imgL} className={clases.imgIcon} />
+          <span>test2</span>
+        </div>
+      </NavLink>
+
+      <NavLink className={clases.SiteBarMenyT} to="/Test3">
+        <div className={clases.siteBarIcon}>
           <img
-            src={imgName3} className={clases.imgIcon}
-            alt=""
-            width="30"
-          />
+            src={imgL} className={clases.imgIcon} />
+          <span>test3</span>
         </div>
-        <NavLink className={clases.SiteBarMenyT} to="/Galereya" >галерея</NavLink>
-      </button> */}
-
-      <button className={clases.SiteBarMeny} >
-        <div className="SiteBarIcons">
-
-          <img
-            src={imgName4} className={clases.imgIcon}
-            alt=""
-            width="30"
-          />
-        </div>
-        <NavLink className={clases.SiteBarMenyT} to="/Reviews">отзывы</NavLink>
-      </button>
-
-
-
-      <button className={clases.SiteBarMeny} >
-        <div className="SiteBarIcons">
-
-          <img
-            src={imgName6} className={clases.imgIcon}
-            alt=""
-            width="30"
-          />
-        </div>
-        <NavLink className={clases.SiteBarMenyT} to="/Dialogs">ЧАТ</NavLink>
-      </button>
-
-
-      <button className={clases.SiteBarMeny} >
-        <div className="SiteBarIcons">
-
-          <img
-            src={imgName6} className={clases.imgIcon}
-            alt=""
-            width="30"
-          />
-        </div>
-        <NavLink className={clases.SiteBarMenyT} to="/Test1">test</NavLink>
-      </button>
-      {/* <button className={clases.SiteBarMeny} >
-        <div className="SiteBarIcons">
-
-          <img
-            src={imgL} className={clases.imgIcon}
-            alt=""
-            width="30"
-          />
-        </div>
-
-        <NavLink className={clases.SiteBarMenyT} to="/Test2">test2</NavLink>
-      </button> */}
-
-      <button className={clases.SiteBarMeny} >
-        <div className="SiteBarIcons">
-
-          <img
-            src={imgL} className={clases.imgIcon}
-            alt=""
-            width="30"
-          />
-        </div>
-        <NavLink className={clases.SiteBarMenyT} to="/Test3">test3</NavLink>
-      </button>
-
+      </NavLink> */}
 
     </div>
 

@@ -34,6 +34,11 @@ const Conteiners = (props) => {
                 //addtestmassegeData={props.addtestmassegeData}
                 //nevTextTest1={props.nevTextTest1}
                 dispatch={props.dispatch}
+                addMessDialog={props.addMessDialog}
+                nevMassegeDate={props.nevMassegeDate}
+                nevNextDialog={props.nevNextDialog}
+                addPageMassege={props.addPageMassege}
+
             />
 
             <BlokFoto />

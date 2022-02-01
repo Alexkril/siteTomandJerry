@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import clases from './Test1.module.scss';
 import AddMasseges from "./AddMassege/AddMasseges";
+import { nevTestMassegeDataActionCreaator, nevTextTest1ActionCreaator } from "../../../state";
 
 const Test1 = (props) => {
 
 
+
+
     let addMassegeg = React.createRef();
     let addtext = () => {
-        props.dispatch({ type: "ADD-TEST-MASSEGEDATA" })
-
+        props.dispatch(nevTestMassegeDataActionCreaator())
     }
 
     let onChengeMassege = () => {
-        let nevText = addMassegeg.current.value
-        let onChengeMassegeAchen = { type: "NEV-TEXT-TEST1", nevText }
-        props.dispatch(onChengeMassegeAchen)
-       // props.dispatch({ type: "NEV-TEXT-TEST1", nevText })
+
+        let text = addMassegeg.current.value
+        let onChengeMassegeAction = nevTextTest1ActionCreaator(text)
+        props.dispatch(onChengeMassegeAction)
+        // props.dispatch({ type: "NEV-TEXT-TEST1", nevText })
     }
 
     return (

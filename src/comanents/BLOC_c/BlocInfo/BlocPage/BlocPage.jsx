@@ -10,7 +10,7 @@ import Test2 from "../../..//Test2/Test2";
 import Test3 from "../../../Test3/Test3";
 import DialogsContainer from "../../../Dialog/DialogsContainer";
 import Test1Container from "../../Test1/Test1Container";
-
+import GalereyaContainer from '../../../Galereya/GalereyaContainer'
 const BlocPage = (props) => {
 
     return (
@@ -22,7 +22,7 @@ const BlocPage = (props) => {
                     <Route path="/Grum/" element={<Grum />} />
                     <Route path="/Price/" element={<Price />} />
 
-                    <Route path="/Galereya/" element={<Galereya
+                    <Route path="/Galereya/" element={<GalereyaContainer
                         galeryMassegeDate={props.galeryMassegeDate}
                         dispatch={props.dispatch} />}
                         addGaleryMassege={props.addGaleryMassege} />

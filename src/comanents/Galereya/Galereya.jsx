@@ -7,12 +7,13 @@ const Galereya = (props) => {
 
     let galeryRef = React.createRef()
     let addText = () => {
-        props.dispatch(nevGaleryMassegeCreator())
+        props.nevGaleryMassege()
     }
     let onChengeGaleryText = (event) => {
         let text = event.target.value
-        props.dispatch(nevTextGaleryCreaator(text))
+        props.nevText(text)
     }
+  
     return (
         <div>
            <div className={clases.Galereya}><h2>галерея</h2></div> 
@@ -21,7 +22,7 @@ const Galereya = (props) => {
                 <div className={clases.Galereya}>
                     <textarea ref={galeryRef} onChange={onChengeGaleryText}
                         placeholder="текст"
-                        value={props.galeryMassegeDate.addGaleryMassege} />
+                        value={props.addGaleryMassege} />
                     <div>
                         <button onClick={addText}>нажать</button>
                     </div>

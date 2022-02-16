@@ -16,8 +16,9 @@ switch (action.type) {
 
   case NEV_GALERY_MASSEGE_DATE:
     let body = state.addGaleryMassege;
-    state.addGaleryMassege = "";
     state.galeryMassegeDate.push({ id:5, text:body })
+        state.addGaleryMassege = "";
+
     return state;
   case NEV_TEXT_GALERY:
     state.addGaleryMassege = action.text

@@ -1,12 +1,12 @@
 .SiteBar {
     position: sticky;
-    top: 100px;
+    top: 30px;
     z-index: 0;
     grid-area: SiteBar;
     margin: 0 auto;
     min-width: 150px;
-    height: 160px;
-    background: rgb(191, 213, 250);
+    
+    //background: rgb(191, 213, 250);
     align-items: center;
     padding-bottom: 420px;
 }

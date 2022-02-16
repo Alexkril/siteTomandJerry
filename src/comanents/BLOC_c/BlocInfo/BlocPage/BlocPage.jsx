@@ -5,13 +5,14 @@ import BlokInfo from './../../BlocInfo/BlocInfo/BlokInfo';
 import Grum from './../../../Grum/Grum';
 import Galereya from './../../../Galereya/Galereya';
 import Reviews from './../../../Reviews/Reviews';
-import Dialogs from "../../../Dialog/Dialogs";
 import { Route, Routes } from "react-router-dom";
-import Test1 from "../../Test1/Test1";
 import Test2 from "../../..//Test2/Test2";
 import Test3 from "../../../Test3/Test3";
+import DialogsContainer from "../../../Dialog/DialogsContainer";
+import Test1Container from "../../Test1/Test1Container";
 
 const BlocPage = (props) => {
+
     return (
 
         <div className={clases.BlocInfoPage}>
@@ -20,21 +21,40 @@ const BlocPage = (props) => {
                     <Route path="/" element={<BlokInfo />} />
                     <Route path="/Grum/" element={<Grum />} />
                     <Route path="/Price/" element={<Price />} />
-                    <Route path="/Galereya/" element={<Galereya />} />
-                    <Route path="/Reviews/" element={<Reviews ClientRevievs={props.ClientRevievs}
-                        postRev={props.postRev} />} />
-                    <Route path="/Dialogs/" element={<Dialogs massedesData={props.massedesData}
-                        DialogsData={props.DialogsData} />} />
-                    <Route path="/Dialogs/:id" element={<Dialogs massedesData={props.massedesData}
-                        DialogsData={props.DialogsData}
-                        addMessDialog={props.addMessDialog}
-                    />} />
-                    <Route path="/Test1/" element={<Test1
+
+                    <Route path="/Galereya/" element={<Galereya
+                        galeryMassegeDate={props.galeryMassegeDate}
+                        dispatch={props.dispatch} />}
+                        addGaleryMassege={props.addGaleryMassege} />
+
+                    <Route
+                        path="/Reviews/"
+                        element={
+                            <Reviews
+                                ClientRevievs={props.ClientRevievs}
+                                postRev={props.postRev} />} />
+
+                    <Route
+                        path="/Dialogs/"
+                        element={
+                            <DialogsContainer
+                                massedesData={props.massedesData}
+                                DialogsData={props.DialogsData}
+                                addPageMassege={props.addPageMassege}
+                                dispatch={props.dispatch}
+                                store={props.store}
+                            />}
+                    />
+                    <Route
+                        path="/Dialogs/:id" element={<DialogsContainer />}
+                    />
+                    <Route path="/Test1/" element={<Test1Container
                         testmassegeData={props.testmassegeData}
-                        addtestmassegeData={props.addtestmassegeData}
+                        dispatch={props.dispatch}
                         onChengeMasse={props.testmassegeData.onChengeMasse}
                         nevTest1={props.nevTest1}
-                        nevTextTest1={props.nevTextTest1}
+                        store={props.store}
+
                     />} />
                     {/* <Route path='/Test3/' element={<Test3
                         MassegeTest3Data={props.MassegeTest3Data}
@@ -52,7 +72,7 @@ const BlocPage = (props) => {
                 </Routes>
 
 
-            
+
 
 
             </div>

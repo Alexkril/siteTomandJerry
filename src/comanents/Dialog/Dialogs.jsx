@@ -1,6 +1,7 @@
 import React from "react";
 import clases from '../Dialog/Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
+import { nevTextDialogActionCreator, nevMassegeDateActionCreaator } from "../../reduser/dialogReduser";
 
 // const DialogItem = (props) => {
 
@@ -14,8 +15,6 @@ import DialogItem from "./DialogItem/DialogItem";
 //     )
 // }
 const Massedes = (props) => {
-
-
     return (
         <div className={clases.messade}>
             {props.massedes}
@@ -26,35 +25,37 @@ const Massedes = (props) => {
 
 const Dialogs = (props) => {
 
-    let Ad = React.createRef();
-
-    let testText = () => {
-        
-        let addText = Ad.current.value;
-        props.addMessDialog(addText);
-        Ad.current.value='';
-    }
-
     let massedesElement = props.massedesData
         .map((massedges) => <Massedes massedes={massedges.massedes} />)
 
-    let DialogsElenent = props.DialogsData
+    let DialogsElenent = props.addPageMassege.DialogsData
         .map((Dialog) => <DialogItem name={Dialog.name} id={Dialog.id} />)
 
+    let Ad = React.createRef();
+    let onPostText = () => {
+         props.addText();
+    }
 
+    let addMassage = () => {
+        let text = Ad.current.value;
+        props.addNevText(text)
+    }
+
+    
     return (
         <div className={clases.Dialogs}>
-
             <div className={clases.DialogItems}>
-                {DialogsElenent}
-            </div>
+                {DialogsElenent}</div>
 
             <div className={clases.messades}>
                 {massedesElement}
                 <div>
-                    <textarea ref={Ad}> </textarea>
+                    <textarea ref={Ad} onChange={addMassage}
+                        value={props.addPageMassege.addPageMassege}
+                        placeholder="текст"
+                    />
                     <div>
-                        <button onClick={testText}>отправить сообщение</button>
+                        <button onClick={onPostText}>отправить сообщение</button>
                     </div>
                 </div>
             </div>

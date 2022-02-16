@@ -1,26 +1,31 @@
 import React, { useState } from "react";
 import clases from './Test1.module.scss';
 import AddMasseges from "./AddMassege/AddMasseges";
+import { nevTestMassegeDataActionCreaator, nevTextTest1ActionCreaator }
+    from './../../../reduser/testMassegeReduser';
 
 const Test1 = (props) => {
 
 
+
+
     let addMassegeg = React.createRef();
     let addtext = () => {
-        props.addtestmassegeData(addMassegeg.current.value)
-        props.testmassegeData.nevTest1 = ''
+        props.nevTestMassege();
     }
 
-    let onChengeMassege = () => {
-        props.nevTextTest1(addMassegeg.current.value)
-
+    let onChengeMassegeTest1 = () => {
+        let text = addMassegeg.current.value
+        props.onChengeMassegeTest(text)
+        // let onChengeMassegeAction = nevTextTest1ActionCreaator(text)
+        // props.dispatch(onChengeMassegeAction)
+        // props.dispatch({ type: "NEV-TEXT-TEST1", nevText })
     }
-
 
     return (
         <div className={clases.Test1}>
             <div>
-                <textarea onChange={onChengeMassege} ref={addMassegeg}
+                <textarea onChange={onChengeMassegeTest1} ref={addMassegeg}
                     placeholder="Введите текст" value={props.testmassegeData.nevTest1}></textarea>
                 <div>
                     <button onClick={addtext}  >add</button>

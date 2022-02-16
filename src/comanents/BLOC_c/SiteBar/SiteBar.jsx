@@ -1,7 +1,7 @@
 import React from "react";
 import SiteBarMeny from "./SiteBarMeny";
 import Cosial from "../../../Cosial/Cosial";
-import clases from './SiteBar.module.css'
+import clases from './SiteBar.module.scss'
 
 
 const SiteBar = () => {

@@ -22,11 +22,13 @@ const dialogReduser = (state=initialState, action) =>{
            massedes:state.addPageMassege,
           }
           state.massedesData.push(massege)
-         state.addPageMassege = " ";
+         state.addPageMassege = "";
          return state;
+
          case NEV_TEXT_DIALOG:
           state.addPageMassege = action.textdialog
           return state;
+          
           default:
             return state;
        }

@@ -4,7 +4,7 @@ import Dialogs from "./Dialogs";
 
 
 const DialogsContainer = (props) => {
-debugger
+
     let state = props.store.getState();
 
 
@@ -13,12 +13,13 @@ debugger
     }
 
     let addMassage = (text) => {
+        
         let nevTextDialogAction = nevTextDialogActionCreator(text)
         props.store.dispatch(nevTextDialogAction);
     }
 
     return (<Dialogs
-        addText={ text}
+        addText={text}
         addNevText={addMassage}
         massedesData={props.massedesData}
         addPageMassege={props.addPageMassege}

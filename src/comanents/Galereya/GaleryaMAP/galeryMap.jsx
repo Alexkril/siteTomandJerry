@@ -8,7 +8,7 @@ let GalText = (props) => {
 };
 
 const AddGaleryText = (props) => {
-    let galeryMassegeElement=props.galeryMassegeDate.galeryMassegeDate
+    let galeryMassegeElement=props.galeryMassegeDate
         .map((gal) => <GalText text={gal.text} id={gal.id}/>)
     return (
         <div >

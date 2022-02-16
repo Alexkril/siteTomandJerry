@@ -1,7 +1,7 @@
 import React from "react";
 import clases from '../Dialog/Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
-import { nevTextDialogActionCreaator, nevMassegeDateActionCreaator } from "../../state";
+import { nevTextDialogActionCreator, nevMassegeDateActionCreaator } from "../../reduser/dialogReduser";
 
 // const DialogItem = (props) => {
 
@@ -15,8 +15,6 @@ import { nevTextDialogActionCreaator, nevMassegeDateActionCreaator } from "../..
 //     )
 // }
 const Massedes = (props) => {
-
-
     return (
         <div className={clases.messade}>
             {props.massedes}
@@ -30,24 +28,20 @@ const Dialogs = (props) => {
     let massedesElement = props.massedesData
         .map((massedges) => <Massedes massedes={massedges.massedes} />)
 
-    let DialogsElenent = props.DialogsData
+    let DialogsElenent = props.addPageMassege.DialogsData
         .map((Dialog) => <DialogItem name={Dialog.name} id={Dialog.id} />)
 
-
-
     let Ad = React.createRef();
-    let text = () => {
-        props.dispatch(nevMassegeDateActionCreaator())
-
+    let onPostText = () => {
+         props.addText();
     }
 
     let addMassage = () => {
         let text = Ad.current.value;
-        let nevTextDialogAction = nevTextDialogActionCreaator(text)
-        props.dispatch(nevTextDialogAction);
+        props.addNevText(text)
     }
 
-debugger
+    
     return (
         <div className={clases.Dialogs}>
             <div className={clases.DialogItems}>
@@ -61,7 +55,7 @@ debugger
                         placeholder="текст"
                     />
                     <div>
-                        <button onClick={text}>отправить сообщение</button>
+                        <button onClick={onPostText}>отправить сообщение</button>
                     </div>
                 </div>
             </div>

@@ -35,14 +35,14 @@ const SiteBarMeny = () => {
         </div>
       </NavLink>
 
-      {/* <NavLink className={clases.SiteBarMenyT} to="/Galereya" >
+      <NavLink className={clases.SiteBarMenyT} to="/Galereya" >
         <div className={clases.siteBarIcon}>
           <img src={imgName3} className={clases.imgIcon} />
           <span>галерея</span>
         </div>
       </NavLink>
 
-      <NavLink className={clases.SiteBarMenyT} to="/Reviews">
+      {/* <NavLink className={clases.SiteBarMenyT} to="/Reviews">
         <div className={clases.siteBarIcon}>
           <img src={imgName4} className={clases.imgIcon} />
           <span>отзывы</span>

@@ -5,13 +5,6 @@ let rerenderIntareTree = () => {
 
 
 let state2 = {
-    dialogPage:{
-    massedesData: [
-        { id: 1, massedes: 'DialogPage' },
-        { id: 2, massedes: 'чат' },
-        ],
-      addPageMassege: ""
-},
 
     testvDate: [
         { id: 1, todo: 'стрижка', },
@@ -46,19 +39,7 @@ let nevMassedes ={
 
 }
 
-export let nevMassegeDate =()=>{
- let massege={
-     id:6,
-     massedes:state2.dialogPage.massedesData.dialogPageMassege,
-      }
-    state2.dialogPage.massedesData.push(massege)
-    state2.dialogPage.massedesData.addPageMassege=""
-}
 
-export let nevNextDialog=(textDialog)=>{
-    state2.dialogPage.massedesData.addPageMassege=textDialog
-    
-}
 
 export const subscribe2 = (observer2) => {
     rerenderIntareTree = observer2;

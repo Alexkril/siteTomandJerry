@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import App from "./App";
-import store from "./state";
+import store from "./redaxStore";
+
 import { BrowserRouter } from "react-router-dom";
 import state2 from './state2';
 import {subscribe2} from "./state2";
@@ -21,9 +22,10 @@ let rerenderIntareTree = (state) => {
           addtestDate={addtestDate}
           addMessDialog={store.addMessDialog}
           postRev={store.postRev}
-         // nevTextTest1={store.nevTextTest1.bind(store)}
           addTextTest3 ={addTextTest3}
           addMessDialog={state2.addMessDialog}
+          store={store}
+          
         />
       </BrowserRouter>
     </React.StrictMode>,
@@ -31,5 +33,8 @@ let rerenderIntareTree = (state) => {
   );
 }
 rerenderIntareTree(store.getState ())
-store.subscribe(rerenderIntareTree);
-subscribe2(rerenderIntareTree);
+store.subscribe(()=>{
+let state =store.getState ()
+  rerenderIntareTree (state)
+}
+);

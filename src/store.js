@@ -1,9 +1,10 @@
-const ADD_TEST_MASSEGE_DATA = "ADD-TEST-MASSEGEDATA"
-const NEV_TEXT_TEST1 = "NEV-TEXT-TEST1"
-const NEV_MASSEGE_DATE = 'NEV_MASSEGE_DATE'
-const NEV_TEXT_DIALOG = "NEV_TEXT_DIALOG"
-debugger
-const store = {
+import dialogReduser from "./reduser/dialogReduser"
+import testReduser from "./reduser/testMassegeReduser"
+import galeryReduser from "./reduser/galeryReduser"
+
+
+
+const store= {
 
 
   state: {
@@ -21,11 +22,7 @@ const store = {
     DialogsData:
       [
         { id: 1, name: 'DialogName ' },
-
       ],
-
-
-
     // GrumTebl: [
     //   {
     //     id: 1, idClient: 'номер', nameClient: 'имя клиента', nameDog: 'кличка животного',
@@ -38,7 +35,6 @@ const store = {
 
     // ],
 
-
     addTest1: {
       testmassegeData: [
         {
@@ -47,8 +43,16 @@ const store = {
         },
       ],
       nevTest1: ''
+    },
+    galereya: {
+      galeryMassegeDate: [
+        {
+          id: 1,
+          text: "текст галерея"
+        }
+      ],
+      addGaleryMassege: ""
     }
-
   },
 
   getState() {
@@ -56,36 +60,54 @@ const store = {
   },
 
   dispatch(action) {
-    if (action.type === ADD_TEST_MASSEGE_DATA) {
-      let massege = {
-        id: Math.random(),
-        testmassege: this.state.addTest1.nevTest1,
-      }
+    
+    this.state.addTest1=testReduser ( this.state.addTest1, action);
+    this.state.dialogPage=dialogReduser ( this.state.dialogPage, action);
+    this.state.galereya=galeryReduser ( this.state.galereya, action)
+    this._collSubscriber(this.state);
 
-      this.state.addTest1.testmassegeData.push(massege);
-      this.state.addTest1.nevTest1 = "";
-      this._collSubscriber(this.state);
-    }
-    else if (action.type === NEV_TEXT_TEST1) {
-      this.state.addTest1.nevTest1 = action.nevText;
-      this._collSubscriber(this.state)
-    }
-    
-    else if (action.type === NEV_MASSEGE_DATE) {
-      let massege = {
-        id: Math.random(),
-        massedes: this.state.dialogPage.addPageMassege,
-      }
-      this.state.dialogPage.massedesData.push(massege)
-      this.state.dialogPage.massedesData.addPageMassege = "";
-      this._collSubscriber(this.state)
-    }
-    
-    else if (action.type === NEV_TEXT_DIALOG)  {
-    this.state.dialogPage.addPageMassege=action.text
-      this._collSubscriber(this.state)
-  }
-},
+    // if (action.type === ADD_TEST_MASSEGE_DATA) {
+    //   let massege = {
+    //     id: Math.random(),
+    //     testmassege: this.state.addTest1.nevTest1,
+    //   }
+    //   this.state.addTest1.testmassegeData.push(massege);
+    //   this.state.addTest1.nevTest1 = "";
+    //   this._collSubscriber(this.state);
+    // }
+    // else if (action.type === NEV_TEXT_TEST1) {
+    //   this.state.addTest1.nevTest1 = action.nevText;
+    //   this._collSubscriber(this.state)
+    // }
+
+    // else if (action.type === NEV_MASSEGE_DATE) {
+
+    //   let massege = {
+    //     id: Math.random(),
+    //     massedes: this.state.dialogPage.addPageMassege,
+    //   }
+    //   this.state.dialogPage.massedesData.push(massege)
+    //   this.state.dialogPage.addPageMassege = " ";
+    //   this._collSubscriber(this.state)
+    // }
+
+    // else if (action.type === NEV_TEXT_DIALOG) {
+    //   this.state.dialogPage.addPageMassege = action.textdialog
+    //   this._collSubscriber(this.state)
+    // }
+
+    // else if (action.type === NEV_GALERY_MASSEGE_DATE) {
+    //   let body= this.state.galereya.addGaleryMassege;
+    //   this.state.galereya.addGaleryMassege = "";
+    //   this.state.galereya.galeryMassegeDate.push( {id:5, text: body} )
+    //   this._collSubscriber(this.state)
+    // }
+    // else if (action.type === NEV_TEXT_GALERY) {
+    //   this.state.galereya.addGaleryMassege = action.text
+    //   this._collSubscriber(this.state)
+    // }
+
+  },
 
 
 
@@ -141,23 +163,8 @@ const store = {
 
 
 export default store;
-export const nevTestMassegeDataActionCreaator = () => {
-  return {
-    type: ADD_TEST_MASSEGE_DATA
-  }
-}
-export const nevTextTest1ActionCreaator = (text) => {
-  return {
-    type: NEV_TEXT_TEST1, nevText: text
-  }
-}
-export const nevMassegeDateActionCreaator = ()=>{
-  return{
-    type: NEV_MASSEGE_DATE
-  }
-}
-export const nevTextDialogActionCreaator = ()=>{
-  return{
-    type : NEV_TEXT_DIALOG
-  }
-}
+
+
+
+
+

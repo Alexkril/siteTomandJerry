@@ -1,7 +1,6 @@
 import React from "react";
 import clases from '../Dialog/Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
-import { nevTextDialogActionCreator, nevMassegeDateActionCreaator } from "../../reduser/dialogReduser";
 
 // const DialogItem = (props) => {
 

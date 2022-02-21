@@ -15,11 +15,11 @@ const GalereyaContainer = (props) => {
                     props.dispatch(nevGaleryMassegeCreator())
                 }
                 let onChengeGaleryText = (text) => {
-                 
+
                     props.dispatch(nevTextGaleryCreaator(text))
                 }
-                console.log(state)
-                
+                //       console.log(state)
+
                 return (
                     <Galereya
                         nevText={onChengeGaleryText}

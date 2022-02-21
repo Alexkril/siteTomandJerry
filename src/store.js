@@ -11,18 +11,18 @@ const store= {
     ClientRevievs: [{ id: 1, ClientReviev: 'спасибо? были у вас в прощсе отлично' },],
 
 
-    dialogPage: {
-      massedesData: [
-        { id: 1, massedes: 'DialogPage' },
-        { id: 2, massedes: 'чат' },
-      ],
-      addPageMassege: ""
-    },
+    // dialogPage: {
+    //   massedesData: [
+    //     { id: 1, massedes: 'DialogPage' },
+    //     { id: 2, massedes: 'чат' },
+    //   ],
+    //   addPageMassege: ""
+    // },
 
-    DialogsData:
-      [
-        { id: 1, name: 'DialogName ' },
-      ],
+    // DialogsData:
+    //   [
+    //     { id: 1, name: 'DialogName ' },
+    //   ],
     // GrumTebl: [
     //   {
     //     id: 1, idClient: 'номер', nameClient: 'имя клиента', nameDog: 'кличка животного',

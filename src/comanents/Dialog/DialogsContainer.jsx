@@ -15,7 +15,6 @@ const DialogsContainer = (props) => {
                     }
 
                     let addMassage = (text) => {
-
                         let nevTextDialogAction = nevTextDialogActionCreator(text)
                         store.dispatch(nevTextDialogAction);
                     }

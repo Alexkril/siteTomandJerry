@@ -15,12 +15,12 @@ const App = (props) => {
         testmassegeData={props.state.addTest1}
         addGrumTebl={props.addGrumTebl}
         onChengeMasse={props.state.onChengeMasse}
-        MassegeTest3Data={props.state2.MassegeTest3Data}
-        testvDate={props.state2.testvDate}
+        MassegeTest3Data={props.MassegeTest3Data}
+        testvDate={props.testvDate}
         addtestDate={props.addtestDate}
         addMessDialog={props.addMessDialog}
         addTextTest3={props.addTextTest3}
-        test3OnText={props.state2}
+        test3OnText={props.test3OnText}
         dispatch={props.dispatch}
         //nevTextTest1={props.nevTextTest1}
         addMessDialog={props.addMessDialog}

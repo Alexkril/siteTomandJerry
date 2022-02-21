@@ -1,6 +1,6 @@
 import React from "react";
 import clases from './../../comanents/Test3/test3.module.scss';
-import Test31 from "./Test31/Test31";
+import Test31Container from "./Test31/Test31Container";
 
 
 
@@ -11,7 +11,7 @@ const Test3 = (props) => {
 
             <div>
                 <h3>test3</h3>
-                <Test31
+                <Test31Container
                     testvDate={props.testvDate}
                     addtestDate={props.addtestDate}
                     test3OnText={props.test3OnText}

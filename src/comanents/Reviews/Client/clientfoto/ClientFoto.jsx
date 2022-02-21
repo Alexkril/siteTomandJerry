@@ -1,5 +1,5 @@
 import React from "react";
-import clases from './ClientFoto.module.css'
+import clases from './ClientFoto.module.scss'
 import img7 from '../../../../assets/img/img7.png';
 
 const ClientName =(props) =>{
@@ -15,7 +15,7 @@ const ClientFoto = (props) => {
        
     ]
     let ClientFotoElement = ClientFotoData 
-    .map ((nameFoto) => <ClientName nameFotos ={nameFoto.nameFoto}/>)
+    .map ((nameFoto) => <ClientName nameFotos ={nameFoto.nameFoto} id={nameFoto.id} />)
     return (
         <div className={clases.ClientFoto}>
             <img src={img7} alt="" />

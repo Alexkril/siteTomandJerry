@@ -3,17 +3,21 @@ import clases from './test311.module.scss';
 
 const Testtext=(props)=>
 {
-return( <div>{props.todo} {props.time} {props.day}</div> )
+return( <div>{props.todo}</div> )
 };
+let testvDate = [
+  { id:1, todo:'стрижка' },
+
+]
 
 const Test311 =(props)=>{
 
-let TestVElement=props.testvDate
-.map((v)=><Testtext todo={v.todo} time={v.time} day={v.day} id={v.id}/>)
+
+let TestVElement=testvDate
+.map((v)=><Testtext todo={v.todo} id={v.id}/>)
 
     return (
 <div className={clases.test311} >
-  
   {TestVElement}
 </div>
 

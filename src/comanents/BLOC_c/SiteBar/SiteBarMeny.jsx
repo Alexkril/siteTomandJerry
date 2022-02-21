@@ -68,7 +68,7 @@ const SiteBarMeny = () => {
           <img src={imgL} className={clases.imgIcon} />
           <span>test2</span>
         </div>
-      </NavLink>
+      </NavLink> */}
 
       <NavLink className={clases.SiteBarMenyT} to="/Test3">
         <div className={clases.siteBarIcon}>
@@ -76,7 +76,7 @@ const SiteBarMeny = () => {
             src={imgL} className={clases.imgIcon} />
           <span>test3</span>
         </div>
-      </NavLink> */}
+      </NavLink>
 
     </div>
 

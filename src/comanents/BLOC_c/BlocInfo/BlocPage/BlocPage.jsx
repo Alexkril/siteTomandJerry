@@ -23,9 +23,8 @@ const BlocPage = (props) => {
                     <Route path="/Price/" element={<Price />} />
 
                     <Route path="/Galereya/" element={<GalereyaContainer
-                        galeryMassegeDate={props.galeryMassegeDate}
-                        dispatch={props.dispatch} />}
-                        addGaleryMassege={props.addGaleryMassege} />
+                        store={props.store}/>} 
+                        />
 
                     <Route
                         path="/Reviews/"
@@ -38,10 +37,6 @@ const BlocPage = (props) => {
                         path="/Dialogs/"
                         element={
                             <DialogsContainer
-                                massedesData={props.massedesData}
-                                DialogsData={props.DialogsData}
-                                addPageMassege={props.addPageMassege}
-                                dispatch={props.dispatch}
                                 store={props.store}
                             />}
                     />
@@ -49,10 +44,7 @@ const BlocPage = (props) => {
                         path="/Dialogs/:id" element={<DialogsContainer />}
                     />
                     <Route path="/Test1/" element={<Test1Container
-                        testmassegeData={props.testmassegeData}
-                        dispatch={props.dispatch}
-                        onChengeMasse={props.testmassegeData.onChengeMasse}
-                        nevTest1={props.nevTest1}
+
                         store={props.store}
 
                     />} />

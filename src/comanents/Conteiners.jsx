@@ -15,27 +15,6 @@ const Conteiners = (props) => {
             <Heder />
             <SiteBar />
             <BlocPage
-                ClientRevievs={props.ClientRevievs}
-                postRev={props.postRev}
-                massedesData={props.massedesData}
-                DialogsData={props.DialogsData}
-                GrumTebl={props.GrumTebl}
-                testmassegeData={props.testmassegeData}
-                addGrumTebl={props.addGrumTebl}
-                onChengeMasse={props.testmassegeData.onChengeMasse}
-                MassegeTest3Data={props.MassegeTest3Data}
-                testvDate={props.testvDate}
-                addtestDate={props.addtestDate}
-                addMessDialog={props.addMessDialog}
-                addTextTest3={props.addTextTest3}
-                test3OnText={props.test3OnText}
-                dispatch={props.dispatch}
-                addMessDialog={props.addMessDialog}
-                nevMassegeDate={props.nevMassegeDate}
-                nevNextDialog={props.nevNextDialog}
-                addPageMassege={props.addPageMassege}
-                galeryMassegeDate={props.galeryMassegeDate}
-                addGaleryMassege={props.addGaleryMassege}
                 store={props.store}
             />
 

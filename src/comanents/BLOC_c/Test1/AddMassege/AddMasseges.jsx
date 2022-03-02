@@ -5,7 +5,7 @@ import AddLogoMasseges from "./AddLogoMasseges/AddLogoMasseges";
 
 const AddMasseges = (props) => {
 
-   let testMesElement = props.testmassegeData.testmassegeData.map((item) => {
+   let testMesElement = props.testmassegeData.map((item) => {
       return <span key={item.id} style={{ display: 'flex' }} >
          <AddLogoMasseges />
          <span >{item.testmassege}</span>

@@ -5,24 +5,19 @@ import App from "./App";
 import store from "./redaxStore";
 import { BrowserRouter } from "react-router-dom";
 import StoreContext from "./storeContext"
+import {Provider} from "react-redux"
 
-let rerenderIntareTree = (state) => {
+
 
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        < StoreContext.Provider value={store}>
+        < Provider store={store}>
           <App />
-        </StoreContext.Provider>
+        </Provider>
 
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById("root")
   );
-}
-rerenderIntareTree(store.getState())
-store.subscribe(() => {
-  let state = store.getState()
-  rerenderIntareTree(state)
-}
-);
+

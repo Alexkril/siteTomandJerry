@@ -7,7 +7,6 @@ import clases from './SiteBar.module.scss'
 const SiteBar = () => {
   return (
     <div className={clases.SiteBar}>
-
       <SiteBarMeny />
       <Cosial />
     </div>

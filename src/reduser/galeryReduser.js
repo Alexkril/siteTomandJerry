@@ -8,37 +8,33 @@ let initialState = {
       text: "текст галерея"
     }
   ],
-  addGaleryMassege: ""
+  addGaleryMassege: "GALERY"
 };
 
-const galeryReduser = (state = initialState, action) =>{
-switch (action.type) {
+const galeryReduser = (state = initialState, action) => {
+  switch (action.type) {
 
-  case NEV_GALERY_MASSEGE_DATE:
-    let body = state.addGaleryMassege;
-    state.galeryMassegeDate.push({ id:5, text:body })
-        state.addGaleryMassege = "";
-
-    return state;
-  case NEV_TEXT_GALERY:
-    state.addGaleryMassege = action.text
-    return state;
-  default:
-    return state;
+    case NEV_GALERY_MASSEGE_DATE: {
+      let body = state.addGaleryMassege;
+      return { ...state ,
+        addGaleryMassege :"",
+        galeryMassegeDate :[...state.galeryMassegeDate, { id: 5, text: body }]
+      }
+      // stateCopy.galeryMassegeDate = [...stateCopy.galeryMassegeDate]
+      // stateCopy.galeryMassegeDate.push({ id: 5, text: body })
+      // stateCopy.addGaleryMassege = "";
+      // return stateCopy;
+    }
+    case NEV_TEXT_GALERY:
+      return {...state,
+        addGaleryMassege : action.text
+      }
+    
+    default:
+      return state;
+  }
 }
-}
-// const galeryReduser = (state, action) =>{
 
-//     if (action.type === NEV_GALERY_MASSEGE_DATE) {
-//         let body=state.addGaleryMassege;
-//         state.addGaleryMassege = "";
-//         state.galeryMassegeDate.push( {id:5, text: body} )
-//       }
-//       else if (action.type === NEV_TEXT_GALERY) {
-//         state.addGaleryMassege = action.text
-//       }
-//     return state;
-// }
 export default galeryReduser;
 
 export const nevGaleryMassegeCreator = () => {
@@ -51,3 +47,16 @@ export const nevTextGaleryCreaator = (text) => {
     type: NEV_TEXT_GALERY, text: text
   }
 }
+
+// const galeryReduser = (state, action) =>{
+
+//     if (action.type === NEV_GALERY_MASSEGE_DATE) {
+//         let body=state.addGaleryMassege;
+//         state.addGaleryMassege = "";
+//         state.galeryMassegeDate.push( {id:5, text: body} )
+//       }
+//       else if (action.type === NEV_TEXT_GALERY) {
+//         state.addGaleryMassege = action.text
+//       }
+//     return state;
+// }

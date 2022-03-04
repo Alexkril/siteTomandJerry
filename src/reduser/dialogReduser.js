@@ -6,48 +6,37 @@ let initialState = {
     { id: 1, massedes: 'DialogPage' },
     { id: 2, massedes: 'чат' },
   ],
-  addPageMassege: "",
+  addPageMassege: " dialog",
+
   DialogsData:
-      [
-        { id: 1, name: 'DialogName ' },
-      ],
+    [
+      { id: 1, name: 'DialogName ' },
+    ],
 };
 
-const dialogReduser = (state=initialState, action) =>{
+const dialogReduser = (state = initialState, action) => {
 
-  switch (action.type){
-  case NEV_MASSEGE_DATE:
-    let massege = {
-             id: Math.random(),
-           massedes:state.addPageMassege,
-          }
-          state.massedesData.push(massege)
-         state.addPageMassege = "";
-         return state;
+  switch (action.type) {
+    case NEV_MASSEGE_DATE:
+      let massege = {
+        id: Math.random(),
+        massedes: state.addPageMassege,
+      }
 
-         case NEV_TEXT_DIALOG:
-          state.addPageMassege = action.textdialog
-          return state;
-          
-          default:
-            return state;
-       }
+return {...state,
+  massedesData : [...state.massedesData, massege ],
+  addPageMassege :""
+}
+    
+    case NEV_TEXT_DIALOG:
+     return{...state,
+      addPageMassege :action.textdialog
+      }
+      
+    default:
+      return state;
+  }
 
-    // if (action.type === NEV_MASSEGE_DATE) {
-
-    //     let massege = {
-    //       id: Math.random(),
-    //       massedes:state.addPageMassege,
-    //     }
-    //     state.massedesData.push(massege)
-    //     state.addPageMassege = " ";
-    //   }
-  
-    //   else if (action.type === NEV_TEXT_DIALOG) {
-    //     state.addPageMassege = action.textdialog
-    //   }
-
-    // return state;
 }
 
 export default dialogReduser;

@@ -14,10 +14,7 @@ const Conteiners = (props) => {
         <div className={clases.Conteiners}>
             <Heder />
             <SiteBar />
-            <BlocPage
-                store={props.store}
-            />
-
+            <BlocPage />
             <BlokFoto />
             <Footer />
 

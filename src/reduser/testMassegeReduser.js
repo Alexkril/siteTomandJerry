@@ -8,24 +8,30 @@ let initialState = {
       testmassege: 'строка сообщений тест 1',
     },
   ],
-  nevTest1: ''
+  nevTest1: 'TEST'
 };
 
-const testReduser = (state=initialState, action) => {
+const testReduser = (state = initialState, action) => {
   switch (action.type) {
-    
+
     case ADD_TEST_MASSEGE_DATA:
       let massege = {
         id: Math.random(),
         testmassege: state.nevTest1,
       }
-      state.testmassegeData.push(massege);
-      state.nevTest1 = "";
-      return state;
+      return {
+        ...state,
+        testmassegeData: [...state.testmassegeData, (massege)],
+        nevTest1: ""
+      }
+    
 
     case NEV_TEXT_TEST1:
-      state.nevTest1 = action.nevText;
-      return state;
+      return {
+        ...state,
+        nevTest1: action.nevText
+      }
+
     default:
       return state;
   }

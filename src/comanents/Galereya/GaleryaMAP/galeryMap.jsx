@@ -5,7 +5,7 @@ let GalText = (props) => {
     return (
         <div> {props.text} </div>
     )
-};
+}; 
 
 const AddGaleryText = (props) => {
     let galeryMassegeElement=props.galeryMassegeDate

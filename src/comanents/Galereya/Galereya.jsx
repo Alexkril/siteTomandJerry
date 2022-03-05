@@ -1,5 +1,5 @@
 import React from "react";
-import clases from './../Galereya/galereya.module.scss';
+import clases from './galereya.module.scss';
 import AddGaleryText from "./GaleryaMAP/GaleryMap";
 
 const Galereya = (props) => {

@@ -11,6 +11,7 @@ import Test3 from "../../../Test3/Test3";
 import DialogsContainer from "../../../Dialog/DialogsContainer";
 import Test1Container from "../../Test1/Test1Container";
 import GalereyaContainer from '../../../Galereya/GalereyaContainer'
+import UsersContainer from "../../Users/UsersContainer";
 const BlocPage = (props) => {
 
     return (
@@ -21,11 +22,9 @@ const BlocPage = (props) => {
                     <Route path="/" element={<BlokInfo />} />
                     <Route path="/Grum/" element={<Grum />} />
                     <Route path="/Price/" element={<Price />} />
-
                     <Route path="/Galereya/" element={<GalereyaContainer
-                        store={props.store}/>} 
-                        />
-
+                        store={props.store} />}
+                    />
                     <Route
                         path="/Reviews/"
                         element={
@@ -36,26 +35,28 @@ const BlocPage = (props) => {
                     <Route
                         path="/Dialogs/"
                         element={
-                            <DialogsContainer
-                                store={props.store}
-                            />}
-                    />
+                            <DialogsContainer />} />
+
+
                     <Route
-                        path="/Dialogs/:id" element={<DialogsContainer />}
+                        path="/Users/"
+                        element={<UsersContainer />} />
+
+
+                    <Route
+                        path="/Dialogs/:id"
+                        element={<DialogsContainer />}
                     />
-                    <Route path="/Test1/" element={<Test1Container
+                    <Route path="/Test1/"
+                        element={<Test1Container
+                        />} />
 
-                        store={props.store}
-
-                    />} />
                     {/* <Route path='/Test3/' element={<Test3
                         MassegeTest3Data={props.MassegeTest3Data}
                         testvDate={props.testvDate}
                         addtestDate={props.addtestDate}
                         addTextTest3 ={props.addTextTest3}
                         test3OnText={props.test3OnText}
-
-                        
                     />}
                     /> */}
 

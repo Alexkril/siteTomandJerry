@@ -1,5 +1,5 @@
 import React from "react";
-import c from "./../Galereya.module.scss"
+import c from "./../galereya.module.scss"
 
 let GalText = (props) => {
     return (

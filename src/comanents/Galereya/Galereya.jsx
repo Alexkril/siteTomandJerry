@@ -1,7 +1,6 @@
 import React from "react";
-import clases from './../Galereya/Galereya.module.scss';
+import clases from './../Galereya/galereya.module.scss';
 import AddGaleryText from "./GaleryaMAP/GaleryMap";
-import { nevTextGaleryCreaator, nevGaleryMassegeCreator } from "./../../reduser/galeryReduser";
 
 const Galereya = (props) => {
 
@@ -16,7 +15,7 @@ const Galereya = (props) => {
   
     return (
         <div>
-           <div className={clases.Galereya}><h2>галерея</h2></div> 
+           <div className={clases.galereya}><h2>галерея</h2></div> 
             <div>
                
                 <div className={clases.Galereya}>

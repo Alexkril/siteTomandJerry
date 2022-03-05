@@ -78,6 +78,16 @@ const SiteBarMeny = () => {
         </div>
       </NavLink> */}
 
+     <NavLink className={clases.SiteBarMenyT} to='/Users'>
+     <div className={clases.siteBarIcon}>
+          <img
+            src={imgL} className={clases.imgIcon} />
+          <span>Users</span>
+        </div>
+     
+     
+     </NavLink>   
+
     </div>
 
 

@@ -29,6 +29,7 @@
 .imgIcon {
   width: 30px;
   height: 30px;
+  padding: 0 5px 0 0;
 }
 
 .SiteBarMenyT {
@@ -58,8 +59,8 @@
   opacity: 1;
 }
 .siteBarIcon:active {
-  color: gold;
-  background: gold;
+  color: #050505;
+  background: #b1b1b1;
 }
 .siteBarIcon:visited {
   color: #ff0202;

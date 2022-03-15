@@ -38,21 +38,6 @@ const testReduser = (state = initialState, action) => {
 
 }
 
-// if (action.type === ADD_TEST_MASSEGE_DATA) {
-//   let massege = {
-//     id: Math.random(),
-//     testmassege: state.nevTest1,
-//   }
-//   state.testmassegeData.push(massege);
-//   state.nevTest1 = "";
-// }
-// else if (action.type === NEV_TEXT_TEST1) {
-//   state.nevTest1 = action.nevText;
-// }
-
-// return state;
-
-// }
 
 export default testReduser;
 

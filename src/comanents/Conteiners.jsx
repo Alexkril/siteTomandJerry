@@ -15,7 +15,7 @@ const Conteiners = (props) => {
             <Heder />
             <SiteBar />
             <BlocPage />
-            <BlokFoto />
+            {/* <BlokFoto /> */}
             <Footer />
 
         </div>

@@ -1,8 +1,15 @@
 .users {
+    .usersBlock {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid black;
+        padding: 10px 30px;
+        margin: 10px 0 0 0;
+    }
+
     background-color: #d4e6f7;
 
     .foto {
-       
         width: 50px;
         height: 70px;
         img {
@@ -17,7 +24,7 @@
     width: 50px;
     .button {
         border-radius: 3px;
-        
+
         opacity: 0.8;
         :hover {
             opacity: 1;
@@ -26,4 +33,13 @@
             color: rgb(255, 255, 255);
         }
     }
+}
+.rightBlock {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    background-color: hsl(60, 10%, 94%);
+    padding: 15px 30px;
+    border-radius: 10px;
+    
 }

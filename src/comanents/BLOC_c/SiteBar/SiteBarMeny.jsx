@@ -7,6 +7,7 @@ import imgName4 from '../../../assets/img/img4.png';
 import imgName5 from '../../../assets/img/img5.png';
 import imgName6 from '../../../assets/img/img6.jpg';
 import imgL from './../../../assets/img/len.jpg';
+import imgS from '../../../assets/img/S1.png';
 import clases from "./SiteBarMenu.module.scss";
 import { NavLink } from "react-router-dom";
 
@@ -63,13 +64,13 @@ const SiteBarMeny = () => {
         </div>
       </NavLink>
 
-      {/* <NavLink className={clases.SiteBarMenyT} to="/Test2">
+      <NavLink className={clases.SiteBarMenyT} to="/findUser">
         <div className={clases.siteBarIcon}>
-          <img src={imgL} className={clases.imgIcon} />
-          <span>test2</span>
+          <img src={imgS} className={clases.imgIcon} />
+          <span>findUser</span>
         </div>
       </NavLink>
-
+{/* 
       <NavLink className={clases.SiteBarMenyT} to="/Test3">
         <div className={clases.siteBarIcon}>
           <img

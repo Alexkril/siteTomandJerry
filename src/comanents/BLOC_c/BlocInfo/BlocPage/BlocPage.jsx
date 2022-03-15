@@ -6,12 +6,13 @@ import Grum from './../../../Grum/Grum';
 import Galereya from './../../../Galereya/Galereya';
 import Reviews from './../../../Reviews/Reviews';
 import { Route, Routes } from "react-router-dom";
-import Test2 from "../../..//Test2/Test2";
-import Test3 from "../../../Test3/Test3";
 import DialogsContainer from "../../../Dialog/DialogsContainer";
 import Test1Container from "../../Test1/Test1Container";
 import GalereyaContainer from '../../../Galereya/GalereyaContainer'
 import UsersContainer from "../../Users/UsersContainer";
+import Test3Container from "../../../Test3/Test3Container";
+import FindUserContainer from "../../../FindUser/FindUserContainer";
+
 const BlocPage = (props) => {
 
     return (
@@ -50,13 +51,11 @@ const BlocPage = (props) => {
                     <Route path="/Test1/"
                         element={<Test1Container
                         />} />
+                         <Route path="/FindUser/"
+                        element={<FindUserContainer
+                        />} />
 
-                    {/* <Route path='/Test3/' element={<Test3
-                        MassegeTest3Data={props.MassegeTest3Data}
-                        testvDate={props.testvDate}
-                        addtestDate={props.addtestDate}
-                        addTextTest3 ={props.addTextTest3}
-                        test3OnText={props.test3OnText}
+                    {/* <Route path='/Test3/' element={<Test3Container
                     />}
                     /> */}
 

@@ -24,7 +24,6 @@ const usersReduser = (state = initialState, action) => {
                     if (u.id === action.usersid) {
                         return { ...u, followed: true }
                     }
-
                     return u;
                 })
             };

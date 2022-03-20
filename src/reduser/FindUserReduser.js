@@ -1,6 +1,6 @@
 let FOLLOW = 'FOLLOW'
 let UNFOLLOW = 'UNFOLLOW'
-let SETUSERS = 'SETUSERS'
+let SETUSERSF = 'SETUSERSF'
 
 
 let initialState = {
@@ -27,7 +27,8 @@ const FindUserReduser = (state = initialState, action) => {
                 return u.folowed})}
         }
 
-        case SETUSERS:
+        case SETUSERSF:
+          
             return {
                 ...state,
                 user: { ...state.user, ...action.user }
@@ -38,6 +39,6 @@ const FindUserReduser = (state = initialState, action) => {
 }
 export default FindUserReduser;
 
-export let followAC = (userid) => ({ type: FOLLOW, userid });
-export let unFollowAC = (userid) => ({ type: UNFOLLOW, userid })
-export let setUsersAC = (user) => ({ type: SETUSERS, user });
+export let follow = (userid) => ({ type: FOLLOW, userid });
+export let unFollow = (userid) => ({ type: UNFOLLOW, userid })
+export let setUsersF = (user) => ({ type: SETUSERSF, user });

@@ -1,51 +1,43 @@
-const FOLLOW = 'FOLLOW'
-const UNFOLLOW = 'UNFOLLOW'
-const SETUSERS = 'SETUSERS'
+let FOLLOW = 'FOLLOW'
+let UNFOLLOW = 'UNFOLLOW'
+let SETUSERS = 'SETUSERS'
 
 
 let initialState = {
-   
-    findUser: [ ]
-    
-   
-}
+    user: []
+};
 
-let findUserReduser = (state = initialState, action) => {
-
+const FindUserReduser = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
-            return {
-                ...state,
-                findUser: state.findUser.map(f => {
-                    if (f.id === action.userid) {
-                        return { ...f, followed: true }
-                    }
-                    return f
-                })
-            };
-            
-        case UNFOLLOW:
-            return {
-                ...state,
-                findUser: state.findUser.map(f => {
-                    if (f.id === action.userid) {
-                        return { ...f, followed: false }
-                    }
-                    return f
-                })
-            }
+            return {...state,
+            user: state.user.map(u=>{
+                if (u.id===action.userid){
+                    return {...u, folowed: true}
+                }
+                return u.folowed
+            } ) }
+
+        case UNFOLLOW:{
+            return{...state,
+            user: state.user.map(u=> { 
+                if(u.id===action.userid){
+                    return {...u, folowed: false}
+                }
+                return u.folowed})}
+        }
+
         case SETUSERS:
             return {
                 ...state,
-                findUser: [...state.findUser, action.findUser]
+                user: { ...state.user, ...action.user }
             }
-        default: return state;
 
+        default: return state;
     }
 }
+export default FindUserReduser;
 
-export default findUserReduser;
-
-export const followAC = (userid) => ({ type: FOLLOW, userid })
-export const anFollowAC = (userid) => ({ type: UNFOLLOW, userid })
-export const setUsersAC = (users) => ({ type: SETUSERS, users })
+export let followAC = (userid) => ({ type: FOLLOW, userid });
+export let unFollowAC = (userid) => ({ type: UNFOLLOW, userid })
+export let setUsersAC = (user) => ({ type: SETUSERS, user });

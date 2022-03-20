@@ -5,7 +5,6 @@ import galeryReduser from "./reduser/galeryReduser";
 import usersReduser from "./reduser/usersReduser";
 import findUserReduser from "./reduser/FindUserReduser";
 
-//import User2Reduser from "./reduser/usersReduser";
 
 let redusers = combineReducers({
     addTest1: testReduser,
@@ -13,7 +12,6 @@ let redusers = combineReducers({
     galereya: galeryReduser,
     usersPage: usersReduser,
     findUser: findUserReduser,
-    //user2Page: User2Reduser
 })
 let store = createStore(redusers);
 

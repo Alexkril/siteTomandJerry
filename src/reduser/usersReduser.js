@@ -1,63 +1,60 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS'
-
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
+const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT'
+const TOOGLE_IS_FETCHING = 'TOOGLE_IS_FETCHING'
 
 let initialState = {
-    users: [
-        // {
-        //     id: 1, followed: false, foto:
-        //         'https://www.google.com/search?q=ava&sxsrf=APq-WBvfsUeKYRzZ9CF0tRO8KWaVdzK1dg:1646563913795&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjI17nJqLH2AhVKEncKHVz4AUgQ_AUoAXoECAIQAw&biw=1366&bih=625&dpr=1#imgrc=yAILgdEq7KL_CM',
-        //     fullName: 'Alex', status: 'bomg', location: { siti: 'don', country: 'pf' }
-        // },
-        // {
-        //     id: 2, followed: true, foto:
-        //         'https://www.google.com/search?q=ava&sxsrf=APq-WBvfsUeKYRzZ9CF0tRO8KWaVdzK1dg:1646563913795&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjI17nJqLH2AhVKEncKHVz4AUgQ_AUoAXoECAIQAw&biw=1366&bih=625&dpr=1#imgrc=yAILgdEq7KL_CM',
-        //     fullName: 'Al', status: 'bomg1', location: { siti: 'don', country: 'ua' }
-        // },
-        // {
-        //     id: 3, followed: true, foto:
-        //         'https://www.google.com/search?q=ava&sxsrf=APq-WBvfsUeKYRzZ9CF0tRO8KWaVdzK1dg:1646563913795&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjI17nJqLH2AhVKEncKHVz4AUgQ_AUoAXoECAIQAw&biw=1366&bih=625&dpr=1#imgrc=yAILgdEq7KL_CM',
-        //     fullName: 'Ale', status: 'bomg2', location: { siti: 'don', country: 'bl' }
-        // },
-    ]
+    users: [],
+    pageSize: 20,
+    totalUserCount: 0,
+    currentPage: 1,
+    isFetching: false
+
 };
 
 const usersReduser = (state = initialState, action) => {
+
     switch (action.type) {
         case FOLLOW:
-            //  debugger
             return {
                 ...state,
                 users: state.users.map(u => {
                     if (u.id === action.usersid) {
                         return { ...u, followed: true }
                     }
-                    console.log(2)
 
-                    return u.followed
+                    return u;
                 })
-            }
+            };
 
         case UNFOLLOW:
-           // debugger
+
             return {
                 ...state,
-                users: state.users.map(un => {
-                    if (un.id === action.userid) {
-                        return { ...un, followed: false }
+                users: state.users.map(u => {
+                    if (u.id === action.userid) {
+                        return { ...u, followed: false }
                     }
-                    console.log(1)
-                    return un.followed
+                    return u;
                 })
             }
 
         case SET_USERS: {
             return {
-                ...state, users: [...state.users, ...action.users]
+                ...state, users: action.users
             }
         }
+        case SET_CURRENT_PAGE:
+            return {
+                ...state, currentPage: action.currentPage
+            }
+        case SET_TOTAL_USERS_COUNT:
+            return { ...state, totalUserCount: action.count }
 
+case TOOGLE_IS_FETCHING:
+    return{...state, isFetching: action.isFetching}
         default:
             return state;
     }
@@ -65,7 +62,9 @@ const usersReduser = (state = initialState, action) => {
 
 export default usersReduser;
 
-export const followAC = (userid) => ({ type: FOLLOW, userid })
-export const unFollowAC = (userid) => ({ type: UNFOLLOW, userid })
-export const setUsersAC = (users) => ({ type: SET_USERS, users })
-
+export const follow = (userid) => ({ type: FOLLOW, userid })
+export const unFollow = (userid) => ({ type: UNFOLLOW, userid })
+export const setUsers = (users) => ({ type: SET_USERS, users })
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+export const setTotalUsersCount = (totalCount) => ({ type: SET_TOTAL_USERS_COUNT, count: totalCount })
+export const toogleIsFetching=(isFetching)=>({type:TOOGLE_IS_FETCHING, isFetching:isFetching})

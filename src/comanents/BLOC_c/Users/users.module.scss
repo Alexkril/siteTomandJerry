@@ -41,5 +41,17 @@
     background-color: hsl(60, 10%, 94%);
     padding: 15px 30px;
     border-radius: 10px;
-    
+}
+
+.select {
+    font-weight: 900;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: hsl(240, 0%, 60%);
+    padding: 2px 2px 2px 5px;
+    cursor: pointer;
+    :active {
+        background: hsl(0, 0%, 70%);
+        color: brown;
+    }
 }

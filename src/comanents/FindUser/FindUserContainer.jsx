@@ -1,29 +1,27 @@
-import React from "react";
 import { connect } from "react-redux";
-import FindUser from './FindUser.jsx'
-import { followAC, anFollowAC, setUsersAC } from '../../reduser/FindUserReduser.js'
+import FindUser from './FindUser.jsx';
+import { followAC, unFollowAC, setUsersAC } from '../../reduser/FindUserReduser'
 
 let mapStateToProps = (state) => {
-    
     return {
-        findUser: state.findUser.findUser
+        findUser: state.findUser.user
     }
-};
-
+}
 let mapDispatchToProps = (dispatch) => {
     return {
         follow: (userid) => {
             dispatch(followAC(userid))
         },
-   
-        anFollow: (userid) => {
-            dispatch(anFollowAC(userid))
+        unFollow: (userid) => {
+            dispatch(unFollowAC(userid))
         },
-        setUsers: (users)=>{
+        setUsersF: (users) => {
             dispatch(setUsersAC(users))
         }
     }
 }
 
-let FindUserContainer = connect(mapStateToProps, mapDispatchToProps)(FindUser)
-export default FindUserContainer;
+
+let findUserReduser = connect(mapStateToProps, mapDispatchToProps)(FindUser)
+
+export default findUserReduser

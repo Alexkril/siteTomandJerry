@@ -1,22 +1,29 @@
 import React from "react";
 import c from './users.module.scss'
 import userphoto from '../../../assets/img/Ava.jpg'
+import { Pagination } from 'antd';
+
 
 const Users = (props) => {
 
-    let pageCount = Math.ceil(props.totalUserCount / props.pageSize)
-    let pages = []
-    for (let i = 1; i <= pageCount; i++) {
-        pages.push(i)
-    }
+    // let pageCount = Math.ceil(props.totalUserCount / props.pageSize)
+    // let pages = []
+    // for (let i = 1; i <= pageCount; i++) {
+    //     pages.push(i)
+    // }
 
     return (
         <div> 
-            page
+          
+            <Pagination className={c.usersBlockf}  defaultCurrent={20} total={props.totalUserCount}
+             onChange={(e) => { props.onPostChanget(e) }}  showSizeChanger ={false} /> 
+            
+           
+{/* 
             {pages.map(p => {
                 return <span className={props.currentPage === p && c.select}
-                    onClick={(e) => { props.onPostChanget(p) }}> {p} </span>
-            })}
+                    onClick={(e) => { props.onPostChanget(p) }} > {p} </span>
+            })} */}
 
             {props.usersPage.map(u => {
 

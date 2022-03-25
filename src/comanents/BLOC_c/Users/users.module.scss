@@ -55,3 +55,23 @@
         color: brown;
     }
 }
+.usersBlockP {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    color: red;
+    font-weight: 900;
+}
+.usersBlockf {
+
+    li {
+        :hover {
+            background-color: #dbdbdb;
+            font-weight: 600;
+        }
+        :active{
+            background-color: gold;
+        }
+    }
+
+}

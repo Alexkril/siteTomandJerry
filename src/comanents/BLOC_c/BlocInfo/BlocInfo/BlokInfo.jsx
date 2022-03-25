@@ -1,21 +1,18 @@
 import React from "react";
 import imgTomJerry from '../../../../assets/img/XXL.jpg'
-import clases from '../BlocInfo/BlokInfo.module.css';
+import clases from '../BlocInfo/BlokInfo.module.scss';
+import SliderFoto from "../../../common/slider/SliderFoto";
 
 const BlokInfo = (props) => {
 
     return (
 
-        <div class={clases.BlokInfo}>
-
-
-            <div className='BlokInfoFoto' >
-                <img src={imgTomJerry} alt="" />
+        <div>
+            <div className={clases.BlokInfo} >
+                    <img src={imgTomJerry} alt="" />
             </div>
-
-            
-            </div>
-
-            );
+            <SliderFoto />
+        </div>
+    );
 }
-            export default BlokInfo;
+export default BlokInfo;

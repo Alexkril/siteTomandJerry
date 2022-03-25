@@ -1,0 +1,26 @@
+.findUser {
+    display: flex;
+    justify-content: space-between;
+    background-color: #dffdc1;
+    border: 1px solid black;
+    width: 600px;
+    padding: 10px 35px;
+    margin: 5px;
+
+    img {
+        width: 30px;
+    }
+}
+.findUserPagination {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    color: red;
+    li {
+        list-style-type: none; /* Убираем маркеры */
+      //  border: 1px solid green;
+      font-size: 12px;
+        padding: 2px 5px;
+    }
+    float: left;
+}

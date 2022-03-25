@@ -7,6 +7,6 @@
           "SiteBar BlokInfo BlokFoto"
           "Footer Footer Footer";
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 6fr 1fr;
+        grid-template-columns: 270px 6fr 1fr;
         gap: 5px;
       }

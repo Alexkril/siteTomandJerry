@@ -2,29 +2,10 @@
   margin: 10px auto;
   display: flex;
   justify-content: space-between;
-  min-width: 100px;
-  width: 140px;
-  border: transparent;
-  opacity: 0.8;
-  align-items: center;
-  color: red;
-  box-shadow: 2px 2px darkorange;
-  padding: 5px 10px;
-  background: hsl(0, 0%, 91%);
+ 
 }
 
-.SiteBarMeny:hover {
-  border: 1px solid red;
-  opacity: 1;
-}
-.SiteBarMeny:active {
-  color: gold;
-  background: gold;
-}
-.SiteBarMeny:visited {
-  color: #ff0202;
-  background: hsl(52, 28%, 51%);
-}
+
 
 .imgIcon {
   width: 30px;
@@ -32,37 +13,14 @@
   padding: 0 5px 0 0;
 }
 
-.SiteBarMenyT {
-  color: #4343e9;
-  text-align: center;
-  font-size: 16px;
-  text-transform: uppercase;
-  padding: 5px;
-  text-decoration: none;
-}
 .siteBarIcon {
   margin-left: 6px;
   display: flex;
   align-items: center;
   border-radius: 4px;
-  min-width: 100px;
-  width: 133px;
   border: transparent;
   border-radius: 3px;
-  opacity: 0.8;
-  background: hsl(0, 0%, 91%);
   padding: 2px;
-  box-shadow: 2px 2px darkorange;
 }
-.siteBarIcon:hover {
-  border: 1px solid red;
-  opacity: 1;
-}
-.siteBarIcon:active {
-  color: #050505;
-  background: #b1b1b1;
-}
-.siteBarIcon:visited {
-  color: #ff0202;
-  background: hsl(52, 28%, 51%);
-}
+
+

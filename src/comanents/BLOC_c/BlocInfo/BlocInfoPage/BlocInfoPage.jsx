@@ -15,10 +15,7 @@ const BlocInfoPage = () => {
             
             <BlokInfo/>
             <Price/> 
-            <Page2/>
-            <Page33/>
-            <Page4/>
-
+          
         </div>
 
     );

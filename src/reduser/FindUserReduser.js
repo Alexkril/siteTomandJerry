@@ -1,44 +1,50 @@
-let FOLLOW = 'FOLLOW'
-let UNFOLLOW = 'UNFOLLOW'
-let SETUSERSF = 'SETUSERSF'
-
+let FOLLOW = 'FOLLOW';
+let UNFOLLOW = 'UNFOLLOW';
+let SET_USERSF = 'SET_USERSF';
 
 let initialState = {
-    user: []
-};
+    users: [
 
-const FindUserReduser = (state = initialState, action) => {
+    ],
+    totalUserCoundF: 10,
+    pageSizeF: 15,
+    totalCoundF: 25
+}
+
+let FindeReduser = (state = initialState, action) => {
+
     switch (action.type) {
         case FOLLOW:
-            return {...state,
-            user: state.user.map(u=>{
-                if (u.id===action.userid){
-                    return {...u, folowed: true}
-                }
-                return u.folowed
-            } ) }
-
-        case UNFOLLOW:{
-            return{...state,
-            user: state.user.map(u=> { 
-                if(u.id===action.userid){
-                    return {...u, folowed: false}
-                }
-                return u.folowed})}
-        }
-
-        case SETUSERSF:
-          
             return {
                 ...state,
-                user: { ...state.user, ...action.user }
+                users: state.users.map(u => {
+                    if (u.id === action.userid) {
+                        return { ...u, followed: false }
+                    }
+                    return u
+                })
+            }
+        case UNFOLLOW:
+            return {
+                ...state,
+                users: state.users.map(user => {
+                    if (user.id === action.userid) {
+                        return { ...user, followed: true }
+                    }
+                    return user
+                })
             }
 
-        default: return state;
+        case SET_USERSF:
+            return { ...state, users: [...state.users, ...action.users] }
+
+        default:
+            return state
     }
 }
-export default FindUserReduser;
 
-export let follow = (userid) => ({ type: FOLLOW, userid });
-export let unFollow = (userid) => ({ type: UNFOLLOW, userid })
-export let setUsersF = (user) => ({ type: SETUSERSF, user });
+export const setUsersF = (users) => ({ type: SET_USERSF, users })
+export const follow = (userid) => ({ type: FOLLOW, userid })
+export const unFollow = (userid) => ({ type: UNFOLLOW, userid })
+
+export default FindeReduser

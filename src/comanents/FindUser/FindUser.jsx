@@ -11,46 +11,50 @@ const FindUser = (props) => {
     for (let i = 1; i <= pagesCountF; i++) { pages.push(i) }
 
 
+    
+
+
+        return (
+            <div >
+                page <div>
+                    {
+                        pages.map(p => {
+
+                            return <span className={props.currentPageF === p && s.findUserPagination}
+                                onClick={() => { props.onChengePage(p) }}>{p}</span>
+                        })
+                    } </div>
+                {/* <Pagination className={s.findUserPagination} defaultCurrent={10} total={props.totalCoundF} /> */}
 
 
 
-    return (
-        <div >
-            page <div>
                 {
-                    pages.map(p => {
-                        <span className={true && s.findUserPagination} >{p}</span>
-                    })
-                } </div>
-            <Pagination className={s.findUserPagination} defaultCurrent={10} total={props.totalCoundF} />
+                    props.findUser.map(u => <div key={u.id}>
+                        <div className={s.findUser}>
 
 
+                            <div>
+                                <div>{u.name}</div>
+                                <img src={u.photos.small != null ? u.photos.small : userphoto}
+                                    alt="ava" />
+                                <div> {
+                                    u.followed ?
+                                        <button onClick={() => props.follow(u.id)}>fols</button> :
+                                        <button onClick={() => props.unFollow(u.id)}>true</button>
 
-            {
-                props.findUser.map(u => <div key={u.id}>
-                    <div className={s.findUser}>
+                                }
+                                </div>
+                            </div>
 
-                        <div>
-                            <img src={u.photos.small != null ? u.photos.small : userphoto}
-                                alt="ava" />
-                            <div> {
-                                u.followed ?
-                                    <button onClick={() => props.follow(u.id)}>fols</button> :
-                                    <button onClick={() => props.unFollow(u.id)}>true</button>
+                            <div>
 
-                            }
+                                <div>status:{u.status}</div>
                             </div>
                         </div>
+                    </div>)
+                }
+            </div>
+        )
+    }
 
-                        <div>
-
-                            <div>status:{u.status}</div>
-                        </div>
-                    </div>
-                </div>)
-            }
-        </div>
-    )
-}
-
-export default FindUser;
+    export default FindUser;

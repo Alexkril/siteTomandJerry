@@ -12,15 +12,7 @@
     }
 }
 .findUserPagination {
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
+    cursor: pointer;
     color: red;
-    li {
-        list-style-type: none; /* Убираем маркеры */
-      //  border: 1px solid green;
-      font-size: 12px;
-        padding: 2px 5px;
-    }
-    float: left;
+    font-weight: 700;
 }

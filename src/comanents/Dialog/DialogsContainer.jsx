@@ -17,8 +17,7 @@ let mapDispatchToProps = (dispatch) => {
         },
         
         addNevText: (text) => {
-            let nevTextDialogAction = nevTextDialogActionCreator(text)
-            dispatch(nevTextDialogAction);
+            dispatch(nevTextDialogActionCreator(text));
         }
 
     }

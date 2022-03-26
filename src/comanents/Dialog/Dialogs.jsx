@@ -1,5 +1,5 @@
 import React from "react";
-import clases from '../Dialog/Dialogs.module.css';
+import clases from '../Dialog/Dialogs.module.scss';
 import DialogItem from "./DialogItem/DialogItem";
 
 const Massedes = (props) => {
@@ -19,13 +19,12 @@ const Dialogs = (props) => {
     let DialogsElenent = props.DialogsData
         .map((Dialog) => <DialogItem name={Dialog.name} id={Dialog.id} />)
 
-    let Ad = React.createRef();
     let onPostText = () => {
          props.addText();
     }
 
-    let addMassage = () => {
-        let text = Ad.current.value;
+    let addMassage = (e) => {
+        let text = e.target.value;
         props.addNevText(text)
     }
 
@@ -38,7 +37,7 @@ const Dialogs = (props) => {
             <div className={clases.messades}>
                 {massedesElement}
                 <div>
-                    <textarea ref={Ad} onChange={addMassage}
+                    <textarea onChange={addMassage}
                         value={props.addPageMassege}
                         placeholder="текст"
                     />

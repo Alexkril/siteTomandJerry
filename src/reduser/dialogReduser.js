@@ -41,13 +41,6 @@ return {...state,
 
 export default dialogReduser;
 
-export const nevMassegeDateActionCreaator = () => {
-  return {
-    type: NEV_MASSEGE_DATE
-  }
-}
-export const nevTextDialogActionCreator = (text) => {
-  return {
-    type: NEV_TEXT_DIALOG, textdialog: text
-  }
-}
+export const nevMassegeDateActionCreaator = () =>({type: NEV_MASSEGE_DATE})
+export const nevTextDialogActionCreator = (text) =>({type: NEV_TEXT_DIALOG, textdialog: text})
+  

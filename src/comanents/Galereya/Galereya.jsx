@@ -4,7 +4,6 @@ import AddGaleryText from "./GaleryaMAP/GaleryMap";
 
 const Galereya = (props) => {
 
-    let galeryRef = React.createRef()
     let addText = () => {
         props.nevGaleryMassege()
     }
@@ -19,7 +18,7 @@ const Galereya = (props) => {
             <div>
                
                 <div className={clases.Galereya}>
-                    <textarea ref={galeryRef} onChange={onChengeGaleryText}
+                    <textarea onChange={onChengeGaleryText}
                         placeholder="текст"
                         value={props.addGaleryMassege} />
                     <div>

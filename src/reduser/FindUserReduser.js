@@ -1,14 +1,19 @@
 let FOLLOW = 'FOLLOW';
 let UNFOLLOW = 'UNFOLLOW';
 let SET_USERSF = 'SET_USERSF';
+let SET_CURRENT_PAGE_F = 'SET_CURRENT_PAGE_F';
+let TOOGLEFETCHING='TOOGLEFETCHING'
 
 let initialState = {
     users: [
-
     ],
-    totalUserCoundF: 10,
-    pageSizeF: 15,
-    totalCoundF: 25
+
+    totalUserCoundF: 0,
+    pageSizeF:5,
+    totalCoundF: 1,
+    currentPageF: 1,
+    isFetchingF : true
+
 }
 
 let FindeReduser = (state = initialState, action) => {
@@ -36,15 +41,27 @@ let FindeReduser = (state = initialState, action) => {
             }
 
         case SET_USERSF:
-            return { ...state, users: [...state.users, ...action.users] }
+            return { ...state, users: action.users}
+
+            case SET_CURRENT_PAGE_F:
+                
+            return(
+             { ...state, currentPageF: action.currentPageF}
+             )
+             case TOOGLEFETCHING: return{
+                 ...state, isFetchingF: action.isFetchingF
+             }
+
 
         default:
             return state
     }
 }
 
-export const setUsersF = (users) => ({ type: SET_USERSF, users })
-export const follow = (userid) => ({ type: FOLLOW, userid })
-export const unFollow = (userid) => ({ type: UNFOLLOW, userid })
+export const setUsersF = (users) => ({ type: SET_USERSF, users });
+export const follow = (userid) => ({ type: FOLLOW, userid });
+export const unFollow = (userid) => ({ type: UNFOLLOW, userid });
+export const setCurrentPageF =(currentPageF) =>({type:SET_CURRENT_PAGE_F, currentPageF});
+export const toogleFetching=(isFetchingF)=>({type:TOOGLEFETCHING, isFetchingF })
 
 export default FindeReduser

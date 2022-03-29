@@ -38,6 +38,7 @@ const BlocPage = (props) => {
                         element={
                             <DialogsContainer />} />
 
+                   
 
                     <Route
                         path="/Users/"
@@ -51,11 +52,11 @@ const BlocPage = (props) => {
                     <Route path="/Test1/"
                         element={<Test1Container
                         />} />
-                         <Route path="/FindUser/"
+                    <Route path="/FindUser/"
                         element={<FindUserContainer
                         />} />
 
-                    
+
 
 
 

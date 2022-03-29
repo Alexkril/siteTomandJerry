@@ -57,38 +57,6 @@ let mapStateToProps = (state) => {
     }
 };
 
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userid) => {
-//             dispatch(followAC(userid))
-//         },
-
-//         unFollow: (userid) => {
-//             dispatch(unFollowAC(userid))
-//         },
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users))
-//         },
-//         setCurrentPage: (page) => {
-//             dispatch(setCurrentPageAC(page))
-//         },
-//         setTotalUsersCount: (totalCount) => {
-//             dispatch(setTotalUsersCountAC(totalCount))
-//         },
-//         toogleIsFetching: (isFetching) => {
-//             dispatch(toogleIsFetchingAC(isFetching))
-//         }
-//     }
-// };
-
-
-// export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
-
-
-
-
-
-
 export default connect(mapStateToProps,
     {
         follow,

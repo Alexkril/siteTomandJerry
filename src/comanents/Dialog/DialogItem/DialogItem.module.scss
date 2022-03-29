@@ -1,0 +1,21 @@
+.DialogItem {
+    align-items: center;
+    width: 200px;
+    color: crimson;
+    margin: 0 auto;
+    padding: 10px 0;
+    .DialogItemFoto {
+        img {
+          width: 40px ;
+        }
+    }
+    .Icon{
+        img {
+            width: 15px;
+        }
+    }
+}
+.DialogItem a {
+    color: brown;
+    text-decoration: none;
+}

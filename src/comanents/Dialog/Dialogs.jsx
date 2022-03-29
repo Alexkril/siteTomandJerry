@@ -2,6 +2,7 @@ import React from "react";
 import clases from '../Dialog/Dialogs.module.scss';
 import DialogItem from "./DialogItem/DialogItem";
 
+
 const Massedes = (props) => {
     return (
         <div className={clases.messade}>
@@ -17,18 +18,22 @@ const Dialogs = (props) => {
         .map((massedges) => <Massedes massedes={massedges.massedes} />)
 
     let DialogsElenent = props.DialogsData
-        .map((Dialog) => <DialogItem name={Dialog.name} id={Dialog.id} />)
+        .map((Dialog) => <DialogItem name={Dialog.name}
+            id={Dialog.id}
+            setUserDialog={props.setUserDialog} />)
 
     let onPostText = () => {
-         props.addText();
+        return (
+            props.nevMassegeDate()
+        )
     }
 
     let addMassage = (e) => {
         let text = e.target.value;
-        props.addNevText(text)
+        props.nevTextDialog(text)
     }
 
-    
+
     return (
         <div className={clases.Dialogs}>
             <div className={clases.DialogItems}>

@@ -37,11 +37,9 @@ const galeryReduser = (state = initialState, action) => {
 
 export default galeryReduser;
 
-export const nevGaleryMassegeCreator = () => {
-  return {
-    type: NEV_GALERY_MASSEGE_DATE
-  }
-}
+export const nevGaleryMassegeCreator = () => ({type: NEV_GALERY_MASSEGE_DATE})
+ 
+
 export const nevTextGaleryCreaator = (text) => {
   return {
     type: NEV_TEXT_GALERY, text: text

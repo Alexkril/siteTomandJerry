@@ -1,28 +1,43 @@
+import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
-import { nevTextDialogActionCreator, nevMassegeDateActionCreaator } from "../../reduser/dialogReduser";
+import { nevTextDialog, nevMassegeDate, setUserDialogPage } from "../../reduser/dialogReduser";
 import Dialogs from "./Dialogs";
 
+class DialogsContainer extends React.Component {
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`).then(response => {
+
+                this.props.setUserDialogPage(response.data)
+        })
+    }
+
+
+    render() {
+
+        return <>
+            <Dialogs massedesData={this.props.massedesData}
+                DialogsData={this.props.DialogsData}
+                nevTextDialog={this.props.nevTextDialog}
+                nevMassegeDate={this.props.nevMassegeDate}
+                addPageMassege={this.props.addPageMassege}
+                setUserDialog={this.props.setUserDialog} />
+
+        </>
+    }
+}
+
 let mapStateToProps = (state) => {
+   
     return {
         massedesData: state.dialogPage.massedesData,
         addPageMassege: state.dialogPage.addPageMassege,
-        DialogsData: state.dialogPage.DialogsData
+        DialogsData: state.dialogPage.DialogsData,
+        addText: state.dialogPage.DialogsData,
+        setUserDialog: state.dialogPage.setUserDialog
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {
-        addText: () => {
-            dispatch(nevMassegeDateActionCreaator())
-        },
-        
-        addNevText: (text) => {
-            dispatch(nevTextDialogActionCreator(text));
-        }
+export default connect(mapStateToProps, { nevTextDialog, nevMassegeDate, setUserDialogPage })(DialogsContainer)
 
-    }
-}
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
 
-export default DialogsContainer;

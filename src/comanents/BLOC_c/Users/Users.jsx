@@ -25,7 +25,6 @@ const Users = (props) => {
                 return <span className={props.currentPage === p && c.select}
                     onClick={(e) => { props.onPostChanget(p) }} > {p} </span>
             })} */}
-
             {props.usersPage.map(u => {
 
                 return <div key={u.id}>

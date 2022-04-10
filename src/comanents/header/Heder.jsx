@@ -1,12 +1,11 @@
 import React from "react";
 import HeaderCont from './HederCont';
-import clases from './Heder.module.css'
+import clases from './heder.module.scss'
 
 const Heder = () => {
     return (
-        <div className={clases.Heder}>
-
-            <HeaderCont />
+        <div className={clases.heder}>
+           <HeaderCont />
         </div>
     );
 }

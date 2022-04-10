@@ -16,7 +16,9 @@ const DialogItem = (props) => {
             <div>{props.setUserDialog.aboutMe} </div>
 
             <div className={clases.DialogItemFoto}>
+
                 <img src={props.setUserDialog.photos.small} className={clases.imgIcon} alt="" />
+                
                 <Link to={path}>  </Link>
                 <div>{props.setUserDialog.contacts.youtube !== null ?
                     props.setUserDialog.contacts.youtube :

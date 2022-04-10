@@ -4,33 +4,36 @@ import { follow, unFollow, setUsersF, setCurrentPageF, toogleFetching } from "..
 import FindUser from './FindUser.jsx'
 import * as axios from "axios";
 import Preloader4 from "../common/Prelouder/Preloader4";
-
+import {setUserFapi} from '../../API/api'
 class FindUserContainer extends React.Component {
     componentDidMount() {
-        this.props.toogleFetching (true)
-            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSizeF}`).then(response => {
-                this.props.toogleFetching (false)
-                  this.props.setUsersF(response.data.items)
+        this.props.toogleFetching(true)
+        setUserFapi(this.props.currentPage, this.props.pageSizeF).then(data => {
+                this.props.toogleFetching(false)
+                this.props.setUsersF(data.items)
             })
-       }
-         onChengePage = (page) => {
-                this.props.setCurrentPageF(page)
-                this.props.toogleFetching (true)
-                axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSizeF}`).then(response => { 
-                    this.props.toogleFetching (false)
-                    this.props.setUsersF(response.data.items)
-                })
-            }
-    
+    }
+
+
+
+    onChengePage = (page) => {
+        this.props.setCurrentPageF(page)
+        this.props.toogleFetching(true)
+        setUserFapi(page, this.props.pageSizeF).then(data => {
+            this.props.toogleFetching(false)
+            this.props.setUsersF(data.items)
+        })
+    }
+
 
     render() {
 
         return <>
-        {this.props.isFetchingF ? <Preloader4 /> : null}
+            {this.props.isFetchingF ? <Preloader4 /> : null}
             <FindUser
-                follow={this.props.follow}
+                followF={this.props.follow}
+                unFollowF={this.props.unFollow}
                 findUser={this.props.findUser}
-                unFollow={this.props.unFollow}
                 pageSizeF={this.props.totalCoundF}
                 totalCoundF={this.props.pageSizeF}
                 currentPageF={this.props.currentPageF}
@@ -44,7 +47,7 @@ class FindUserContainer extends React.Component {
 };
 
 let mapStateToProps = (state) => {
-   
+
     return {
         findUser: state.findUser.users,
         pageSizeF: state.findUser.pageSizeF,

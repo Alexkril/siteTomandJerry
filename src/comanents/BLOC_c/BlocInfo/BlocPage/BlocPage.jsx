@@ -6,12 +6,13 @@ import Grum from './../../../Grum/Grum';
 import Galereya from './../../../Galereya/Galereya';
 import Reviews from './../../../Reviews/Reviews';
 import { Route, Routes } from "react-router-dom";
-import DialogsContainer from "../../../Dialog/DialogsContainer";
+import Dialogs from "../../../Dialog/Dialogs";
 import Test1Container from "../../Test1/Test1Container";
 import GalereyaContainer from '../../../Galereya/GalereyaContainer'
 import UsersContainer from "../../Users/UsersContainer";
 import Test3Container from "../../../Test3/Test3Container";
 import FindUserContainer from "../../../FindUser/FindUserContainer";
+import RegistrationForm from "../../../registrationForm/RegistrationForm";
 
 const BlocPage = (props) => {
 
@@ -36,9 +37,13 @@ const BlocPage = (props) => {
                     <Route
                         path="/Dialogs/"
                         element={
-                            <DialogsContainer />} />
+                            <Dialogs />} />
+                    <Route
+                        path="/login/"
+                        element={
+                            <RegistrationForm />} />
 
-                   
+
 
                     <Route
                         path="/Users/"
@@ -47,7 +52,7 @@ const BlocPage = (props) => {
 
                     <Route
                         path="/Dialogs/:id"
-                        element={<DialogsContainer />}
+                        element={<Dialogs />}
                     />
                     <Route path="/Test1/"
                         element={<Test1Container

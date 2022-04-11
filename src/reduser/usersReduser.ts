@@ -1,4 +1,5 @@
 import { UserType } from '../type/type'
+import {UserAri} from '../API/api'
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -70,3 +71,18 @@ export const setUsers = (users: UserType) => ({ type: SET_USERS, users })
 export const setCurrentPage = (currentPage: number) => ({ type: SET_CURRENT_PAGE, currentPage });
 export const setTotalUsersCount = (totalCount: number) => ({ type: SET_TOTAL_USERS_COUNT, count: totalCount })
 export const toogleIsFetching = (isFetching: boolean) => ({ type: TOOGLE_IS_FETCHING, isFetching: isFetching })
+
+export const setUserThunkCreetor = (currentPage: number, pageSize: number) => {
+
+    return (dispatch: any) => {
+        console.log('data',1 )
+        dispatch(toogleIsFetching(true))
+        //@ts-ignore
+        UserAri.setUserApi(currentPage, pageSize).then(data => {
+            dispatch(toogleIsFetching(false))
+            dispatch(setUsers(data.items))
+            dispatch(setTotalUsersCount(data.totalCount))
+        });
+
+    }
+}

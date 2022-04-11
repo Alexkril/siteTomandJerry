@@ -16,7 +16,6 @@ export type initialStateType = typeof initialState
 let authReduser = (state = initialState, action: any): initialStateType => {
     switch (action.type) {
         case SET_USER_DATA:
-              //   debugger             
             return {
                 ...state,
                 ...action.payload,

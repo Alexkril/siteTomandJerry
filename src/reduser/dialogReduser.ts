@@ -1,4 +1,5 @@
 import { PhotosType } from '../type/type'
+import { dialogApi } from '../API/api'
 
 const NEV_MASSEGE_DATE = 'NEV_MASSEGE_DATE';
 const NEV_TEXT_DIALOG = 'NEV_TEXT_DIALOG';
@@ -44,6 +45,7 @@ let initialState = {
 
   setUserDialog: null as SetUserDialogType | null
 };
+
 export type initialStateType = typeof initialState
 
 
@@ -71,7 +73,7 @@ const dialogReduser = (state = initialState, action: any): initialStateType => {
     case SET_USER_DIALOG_PAGE:
 
       return {
-        ...state, setUserDialog:  action.setUser 
+        ...state, setUserDialog: action.setUser
       }
 
     default:
@@ -95,10 +97,24 @@ export const nevTextDialog = (text: string): NevTextDialogActionType => ({ type:
 
 export type SetUserDialogPageActionType = {
   type: typeof SET_USER_DIALOG_PAGE
-  setUser: Array<SetUserDialogType>
-
+  setUser: SetUserDialogType
 }
-export const setUserDialogPage = (setUser: Array<SetUserDialogType>): SetUserDialogPageActionType => 
-({ type: SET_USER_DIALOG_PAGE, setUser })
+
+export const setUserDialogPage = (setUser: SetUserDialogType): SetUserDialogPageActionType =>
+  ({ type: SET_USER_DIALOG_PAGE, setUser })
 
 export default dialogReduser;
+
+export const setDialogThuncCreetor = () => {
+  console.log('data1', dialogApi.setDialogApi())
+  //@ts-ignore
+  return (dispatch: any) => {
+    console.log('data', 1)
+    //@ts-ignore
+    dialogApi.setDialogApi().then(data =>
+      dispatch(setUserDialogPage(data))
+    )
+
+  }
+  
+}

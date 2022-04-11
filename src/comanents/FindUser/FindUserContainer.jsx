@@ -1,17 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
-import { follow, unFollow, setUsersF, setCurrentPageF, toogleFetching } from "../../reduser/FindUserReduser";
+import { follow, unFollow, setUsersF, setCurrentPageF,
+     toogleFetching, setUsersFThunkCreetor } from "../../reduser/FindUserReduser";
 import FindUser from './FindUser.jsx'
 import * as axios from "axios";
 import Preloader4 from "../common/Prelouder/Preloader4";
-import {setUserFapi} from '../../API/api'
+import {FindUserApi} from '../../API/api'
+
+
 class FindUserContainer extends React.Component {
     componentDidMount() {
-        this.props.toogleFetching(true)
-        setUserFapi(this.props.currentPage, this.props.pageSizeF).then(data => {
-                this.props.toogleFetching(false)
-                this.props.setUsersF(data.items)
-            })
+        this.props.setUsersFThunkCreetor()
+        // this.props.toogleFetching(true)
+        
+        // FindUserApi.setUserFapi(this.props.currentPage, this.props.pageSizeF).then(data => { 
+        //         this.props.toogleFetching(false)
+        //         this.props.setUsersF(data.items)
+        //     })
     }
 
 
@@ -19,7 +24,7 @@ class FindUserContainer extends React.Component {
     onChengePage = (page) => {
         this.props.setCurrentPageF(page)
         this.props.toogleFetching(true)
-        setUserFapi(page, this.props.pageSizeF).then(data => {
+        FindUserApi.setUserFapi(page, this.props.pageSizeF).then(data => {
             this.props.toogleFetching(false)
             this.props.setUsersF(data.items)
         })
@@ -58,5 +63,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { follow, unFollow, setUsersF, setCurrentPageF, toogleFetching })(FindUserContainer)
+export default connect(mapStateToProps, { follow, unFollow, setUsersF,
+     setCurrentPageF, toogleFetching, setUsersFThunkCreetor })(FindUserContainer)
 

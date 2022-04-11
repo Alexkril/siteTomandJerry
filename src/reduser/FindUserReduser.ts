@@ -1,4 +1,5 @@
 import { UserType } from '../type/type'
+import {FindUserApi} from '../API/api'
 
 let FOLLOW = 'FOLLOW';
 let UNFOLLOW = 'UNFOLLOW';
@@ -100,3 +101,16 @@ export type ToogleFetchingActionType = {
 export const toogleFetching = (isFetchingF: boolean): ToogleFetchingActionType => ({ type: TOOGLEFETCHING, isFetchingF })
 
 export default FindeReduser
+
+export const setUsersFThunkCreetor =(currentPage:number, pageSizeF:number)=>{
+    return (dispatch:any)=>{
+        dispatch(toogleFetching(true))
+        
+        FindUserApi.setUserFapi(currentPage, pageSizeF).
+        //@ts-ignore
+        then(data => { 
+            dispatch(toogleFetching(false))
+            dispatch(setUsersF(data.items))
+            })
+    }
+}

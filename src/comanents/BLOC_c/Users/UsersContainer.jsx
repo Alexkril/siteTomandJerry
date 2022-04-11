@@ -2,34 +2,39 @@ import React from "react";
 import { connect } from "react-redux";
 import Users from './Users.jsx'
 import {
-    follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFetching
+    follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFetching, setUserThunkCreetor
 } from './../../../reduser/usersReduser'
 import Preloader from "../../common/Prelouder/Preloader.jsx";
 import * as axios from "axios";
+import { UserAri } from '../../../API/api'
+
 
 
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.toogleIsFetching(true)
-        axios.get
-            (`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}
-        &count=${this.props.pageSize}`, { withCredentials: true })
-            .then(response => {
-                this.props.toogleIsFetching(false)
-                this.props.setUsers(response.data.items)
-                this.props.setTotalUsersCount(response.data.totalCount)
-            });
+        this.props.setUserThunkCreetor()
+        // this.props.toogleIsFetching(true)
+        // // axios.get
+        // //     (`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}
+        // // &count=${this.props.pageSize}`, 
+        // // { withCredentials: true })
+        // UserAri.setUserApi(this.props.currentPage, this.props.pageSize )
+        //     .then(data => { 
+        //         this.props.toogleIsFetching(false)
+        //         this.props.setUsers(data.items)
+        //         this.props.setTotalUsersCount(data.totalCount)
+        //     });
     }
     onPostChanget = (pageNomber) => {
         this.props.setCurrentPage(pageNomber)
         this.props.toogleIsFetching(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNomber}&count=${this.props.pageSize}`,
-            { withCredentials: true })
-            .then(response => {
+
+        UserAri.setUserApi(pageNomber, this.props.pageSize)
+            .then(data => {
                 this.props.toogleIsFetching(false)
-                this.props.setUsers(response.data.items)
+                this.props.setUsers(data.items)
             });
     };
 
@@ -69,6 +74,7 @@ export default connect(mapStateToProps,
         setUsers,
         setCurrentPage,
         setTotalUsersCount,
-        toogleIsFetching
+        toogleIsFetching,
+        setUserThunkCreetor
     }
 )(UsersContainer)

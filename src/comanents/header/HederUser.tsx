@@ -3,10 +3,11 @@ import clases from './heder.module.scss'
 import { NavLink } from "react-router-dom";
 import imguser from '../../assets/img/Ava.jpg'
 import { useDispatch, useSelector } from "react-redux";
-import { setUserData } from "../../reduser/authReduser";
+//import { setUserData } from "../../reduser/authReduser";
 import axios from "axios";
 import { AppStateType } from "../../redaxStore";
-
+import { authAPI } from '../../API/api'
+import { getAuthThunkCreetor } from '../../reduser/authReduser'
 
 
 type propsType = {
@@ -18,17 +19,23 @@ type propsType = {
 const HederUser = (props: propsType) => {
 
     let dispatch = useDispatch()
+
     useEffect(() => {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, { withCredentials: true })
-            .then(response => {
-                if (response.data.resultCode === 0) {
-                    let { id, email, login } = response.data.data
-                    //@ts-ignore
-                    dispatch(setUserData(id, email, login))
-                }
-            })
+        getAuthThunkCreetor()
+        // auser.setAuser()
+        //     .then((data: any) => {
+        //         //@ts-ignore
+        //         if (data.resultCode === 0) {
+        //             let { id, email, login } = data.data
+        //             //@ts-ignore
+        //             dispatch(setUserData(id, email, login))
+        //         }
+        //     }) 
+        //@ts-ignore
+      
     }, [])
 
+   
 
     const isAuhs = useSelector((state: AppStateType) => state.auth)
 

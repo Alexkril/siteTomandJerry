@@ -22,17 +22,7 @@
 .leftBlock {
     margin: 10px 0 0 25px;
     width: 50px;
-    .button {
-        border-radius: 3px;
-
-        opacity: 0.8;
-        :hover {
-            opacity: 1;
-            border: 1px solid red;
-            background: black;
-            color: rgb(255, 255, 255);
-        }
-    }
+    
 }
 .rightBlock {
     display: flex;

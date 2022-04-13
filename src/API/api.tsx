@@ -26,12 +26,28 @@ export const UserAri = {
         return instanse.get(`users?page=${currentPage} &count=${pageSize}`)
             //@ts-ignore
             .then(response => response.data)
+    },
+
+    followUsreApi (id:any){
+        return instanse.post(`follow/${id}`)
+       
+    },
+    unFollowUsreApi (id:any){
+        return instanse.delete(`follow/${id}`)
+       
     }
 }
+
+
 export const dialogApi = {
     setDialogApi() {
         return instanse.get(`profile/2`).
             //@ts-ignore
             then(response => response.data)
+    }
+}
+export const authAPI = {
+    setAuth() {
+        return instanse.get(`auth/me`)
     }
 }

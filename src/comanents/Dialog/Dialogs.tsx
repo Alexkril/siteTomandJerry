@@ -36,14 +36,15 @@ const Dialogs = () => {
         setDialogThuncCreetor()
         // 
 
-//         dialogApi.setDialogApi().then((data: SetUserDialogType) => {
-// console.log('ffff',data)
-//             dispatch(setUserDialogPage(data))
-//         })
+        dialogApi.setDialogApi().then((data: SetUserDialogType) => {
+console.log('ffff',data)
+            dispatch(setUserDialogPage(data))
+        })
 
 
-        // axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`).then(response => {
-        //     dispatch(setUserDialogPage(response.data))
+        // axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
+        // .then((response:any) => {
+        //     dispatch(setUserDialogPage(response.data))})
 
     }, [])
 

@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import Users from './Users.jsx'
+import Users from './Users.tsx'
 import {
-    follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount, toogleIsFetching, setUserThunkCreetor
+     follow, unFollow, 
+     getUserThunkCreetor, followingIsFetching, getUserPostChangetThunkCreetor
 } from './../../../reduser/usersReduser'
 import Preloader from "../../common/Prelouder/Preloader.jsx";
-import * as axios from "axios";
-import { UserAri } from '../../../API/api'
 
 
 
@@ -14,7 +13,7 @@ import { UserAri } from '../../../API/api'
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.setUserThunkCreetor()
+        this.props.getUserThunkCreetor(this.props.currentPage, this.props.pageSize)
         // this.props.toogleIsFetching(true)
         // // axios.get
         // //     (`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}
@@ -27,15 +26,17 @@ class UsersContainer extends React.Component {
         //         this.props.setTotalUsersCount(data.totalCount)
         //     });
     }
-    onPostChanget = (pageNomber) => {
-        this.props.setCurrentPage(pageNomber)
-        this.props.toogleIsFetching(true)
 
-        UserAri.setUserApi(pageNomber, this.props.pageSize)
-            .then(data => {
-                this.props.toogleIsFetching(false)
-                this.props.setUsers(data.items)
-            });
+    onPostChanget = (pageNomber) => {
+        this.props.getUserPostChangetThunkCreetor(pageNomber, this.props.pageSize)
+        // this.props.setCurrentPage(pageNomber)
+        // this.props.toogleIsFetching(true)
+
+        // UserAri.setUserApi(pageNomber, this.props.pageSize)
+        //     .then(data => {
+        //         this.props.toogleIsFetching(false)
+        //         this.props.setUsers(data.items)
+        //     });
     };
 
     render() {
@@ -50,7 +51,8 @@ class UsersContainer extends React.Component {
                 onPostChanget={this.onPostChanget}
                 follow={this.props.follow}
                 unFollow={this.props.unFollow}
-
+                followingIsFetching={this.props.followingIsFetching}
+                follofing={this.props.follofingProgres}
             />
         </>
     }
@@ -63,7 +65,8 @@ let mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         totalUserCount: state.usersPage.totalUserCount,
         currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        follofingProgres: state.usersPage.follofingProgres
     }
 };
 
@@ -71,10 +74,9 @@ export default connect(mapStateToProps,
     {
         follow,
         unFollow,
-        setUsers,
-        setCurrentPage,
-        setTotalUsersCount,
-        toogleIsFetching,
-        setUserThunkCreetor
+        getUserThunkCreetor,
+        followingIsFetching,
+        getUserPostChangetThunkCreetor
+       
     }
 )(UsersContainer)

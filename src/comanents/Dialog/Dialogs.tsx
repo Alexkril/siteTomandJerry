@@ -5,9 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { nevTextDialog, nevMassegeDate, setUserDialogPage, setDialogThuncCreetor, SetUserDialogType } from "../../reduser/dialogReduser";
 import { initialStateType } from '../../reduser/dialogReduser'
 import { AppStateType } from "../../redaxStore";
-import axios from "axios";
 import { useEffect } from "react";
 import { dialogApi } from '../../API/api'
+import { Navigate } from 'react-router-dom';
+import RegistrationForm from '../registrationForm/RegistrationForm'
 
 type PropsType = {
     messade: string
@@ -37,7 +38,7 @@ const Dialogs = () => {
         // 
 
         dialogApi.setDialogApi().then((data: SetUserDialogType) => {
-console.log('ffff',data)
+            console.log('ffff', data)
             dispatch(setUserDialogPage(data))
         })
 
@@ -51,7 +52,8 @@ console.log('ffff',data)
     const dispatch = useDispatch()
 
     const user: initialStateType = useSelector((state: AppStateType) => state.dialogPage)
-    console.log('gggg', user)
+    //@ts-ignore
+    const authRederect = useSelector((state: AppStateType) => state.auth.isAuhs)
 
     let massedesElement = user.massedesData
         .map((massedges) => <Massedes massedes={massedges.massedes} messade={""} />)
@@ -72,9 +74,12 @@ console.log('ffff',data)
         let text = e.target.value;
         dispatch(nevTextDialog(text))
     }
-
-
+    
+    //@ts-ignore
+     if (!authRederect) return <Navigate  to={'/login/'}/>
+console.log('authRederect',authRederect)
     return (
+        
         <div className={clases.Dialogs}>
             <div className={clases.DialogItems}>
                 {DialogsElenent}</div>

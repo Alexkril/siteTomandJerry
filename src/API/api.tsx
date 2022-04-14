@@ -5,11 +5,9 @@ import * as axios from "axios";
 
 //@ts-ignore
 const instanse = axios.create({
-
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     withCredentials: true,
     headers: { 'API-KEY': ' f7fadd9b-3e43-4308-9c60-85f68b8fa3a4' }
-
 })
 
 export const FindUserApi = {
@@ -37,8 +35,6 @@ export const UserAri = {
        
     }
 }
-
-
 export const dialogApi = {
     setDialogApi() {
         return instanse.get(`profile/2`).
@@ -49,5 +45,7 @@ export const dialogApi = {
 export const authAPI = {
     setAuth() {
         return instanse.get(`auth/me`)
+         //@ts-ignore
+        .then(response => response.data)
     }
 }

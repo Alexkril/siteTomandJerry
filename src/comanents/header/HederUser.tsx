@@ -3,11 +3,11 @@ import clases from './heder.module.scss'
 import { NavLink } from "react-router-dom";
 import imguser from '../../assets/img/Ava.jpg'
 import { useDispatch, useSelector } from "react-redux";
-//import { setUserData } from "../../reduser/authReduser";
+import { setUserData } from "../../reduser/authReduser";
 import axios from "axios";
 import { AppStateType } from "../../redaxStore";
 import { authAPI } from '../../API/api'
-import { getAuthThunkCreetor } from '../../reduser/authReduser'
+//import { getAuthThunkCreetor } from '../../reduser/authReduser'
 
 
 type propsType = {
@@ -18,24 +18,25 @@ type propsType = {
 
 const HederUser = (props: propsType) => {
 
-    let dispatch = useDispatch()
+
 
     useEffect(() => {
-        getAuthThunkCreetor()
-        // auser.setAuser()
-        //     .then((data: any) => {
-        //         //@ts-ignore
-        //         if (data.resultCode === 0) {
-        //             let { id, email, login } = data.data
-        //             //@ts-ignore
-        //             dispatch(setUserData(id, email, login))
-        //         }
-        //     }) 
+      //  getAuthThunkCreetor()
+        authAPI.setAuth()
         //@ts-ignore
-      
+            .then(data => {if (data.resultCode === 0) {
+                //@ts-ignore
+                    let { id, email, login } = data.data  
+                    //@ts-ignore
+                    dispatch(setUserData(id, email, login))
+                   
+                }
+            })
+
     }, [])
 
-   
+    const dispatch = useDispatch()
+
 
     const isAuhs = useSelector((state: AppStateType) => state.auth)
 

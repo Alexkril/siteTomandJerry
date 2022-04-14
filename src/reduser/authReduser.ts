@@ -31,21 +31,22 @@ export type SetUserDataType = {
     type: typeof SET_USER_DATA
     payload: { id: number, email: string, login: string, isAuhs: boolean }
 }
-let setUserData = (id: number, email: string, login: string, isAuhs: boolean): SetUserDataType =>
+export let setUserData = (id: number, email: string, login: string, isAuhs: boolean): SetUserDataType =>
     ({ type: SET_USER_DATA, payload: { id, email, login, isAuhs } })
 
 export default authReduser
 
-export const getAuthThunkCreetor = () =>{ 
-    return (dispatch: any) => {
-       return(  authAPI.setAuth().then((responce: any) => {
-        if (responce.data.resultCode === 0) {
-            let { id, email, login } = responce.data.data
-            
-            //@ts-ignore
-            dispatch(setUserData(id, email, login))
-        }
-    })
-)
-}
-}
+// export const getAuthThunkCreetor = () =>{ 
+//     return (dispatch: any) => {
+//        return  authAPI.setAuth()
+//        //@ts-ignore
+//            .then(data => {if (data.resultCode === 0) {
+//                //@ts-ignore
+//                    let { id, email, login } = data.data  
+//                    //@ts-ignore
+//                    dispatch(setUserData(id, email, login))
+                  
+//                }
+//            })
+// }
+// }

@@ -11,6 +11,7 @@ import imgName4 from '../../../assets/img/img4.png';
 import imgName6 from '../../../assets/img/img6.jpg';
 import imgL from './../../../assets/img/len.jpg';
 import imgS from '../../../assets/img/S1.png';
+import { FormOutlined,  } from '@ant-design/icons';
 
 
 const SiteBarMeny2 = () => {
@@ -58,7 +59,7 @@ const SiteBarMeny2 = () => {
           </Menu.Item>
         </Menu.ItemGroup>
       </SubMenu>
-      
+
       <SubMenu key="sub2" icon={<AppstoreOutlined />} title="практика">
         <Menu.Item key="5">
           <NavLink className={clases.SiteBarMenyT} to="/Galereya" >
@@ -78,8 +79,8 @@ const SiteBarMeny2 = () => {
           </NavLink>
         </Menu.Item>
 
-       
-        
+
+
 
         <Menu.Item key="7">
           <NavLink className={clases.SiteBarMenyT} to="/Test1">
@@ -105,6 +106,16 @@ const SiteBarMeny2 = () => {
               <img
                 src={imgL} className={clases.imgIcon} />
               <span>Users</span>
+            </div>
+          </NavLink>
+        </Menu.Item>
+        <Menu.Item key="10">
+          <NavLink className={clases.SiteBarMenyT} to='/login'>
+            <div className={clases.siteBarIcon}>
+              {/* <img src={imgL} className={clases.imgIcon} /> */}
+              <FormOutlined style={{ fontSize: '20px', color: 'rgb(253 52 52 / 85%)' }}/>
+              <span>регистрация</span>
+
             </div>
           </NavLink>
         </Menu.Item>

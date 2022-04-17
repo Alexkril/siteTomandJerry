@@ -32,28 +32,15 @@ const Dialogs = () => {
 
 
 
-    useEffect(() => {
 
-        setDialogThuncCreetor()
-        // 
-
-        dialogApi.setDialogApi().then((data: SetUserDialogType) => {
-            console.log('ffff', data)
-            dispatch(setUserDialogPage(data))
-        })
-
-
-        // axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
-        // .then((response:any) => {
-        //     dispatch(setUserDialogPage(response.data))})
-
-    }, [])
 
     const dispatch = useDispatch()
 
     const user: initialStateType = useSelector((state: AppStateType) => state.dialogPage)
+    console.log('userDial', user)
     //@ts-ignore
-    const authRederect = useSelector((state: AppStateType) => state.auth.isAuhs)
+    const authMyId = useSelector((state: AppStateType) => state.auth.id)
+
 
     let massedesElement = user.massedesData
         .map((massedges) => <Massedes massedes={massedges.massedes} messade={""} />)
@@ -62,6 +49,8 @@ const Dialogs = () => {
         .map((Dialog) => <DialogItem name={Dialog.name}
             id={Dialog.id}
             setUserDialog={user.setUserDialog} />)
+
+
 
     let onPostText = () => {
         return (
@@ -74,12 +63,25 @@ const Dialogs = () => {
         let text = e.target.value;
         dispatch(nevTextDialog(text))
     }
-    
-    //@ts-ignore
-     if (!authRederect) return <Navigate  to={'/login/'}/>
-console.log('authRederect',authRederect)
-    return (
+
+    // //@ts-ignore
+    //  if (!authRederect) return <Navigate  to={'/login/'}/>
+
+
+    useEffect(() => {
+
+        // setDialogThuncCreetor()
+        // 
         
+            dialogApi.setDialogApi(String(2)).then((data: SetUserDialogType) => {
+                dispatch(setUserDialogPage(data))
+            })
+        
+        //if (authMyId!==null) {}
+
+    }, [])
+    return (
+
         <div className={clases.Dialogs}>
             <div className={clases.DialogItems}>
                 {DialogsElenent}</div>

@@ -105,13 +105,13 @@ export const setUserDialogPage = (setUser: SetUserDialogType): SetUserDialogPage
 
 export default dialogReduser;
 
-export const setDialogThuncCreetor = () => {
-  console.log('data1', dialogApi.setDialogApi())
+export const setDialogThuncCreetor = (id:string) => {
+ // console.log('data1', dialogApi.setDialogApi())
   //@ts-ignore
   return (dispatch: any) => {
     console.log('data', 1)
     //@ts-ignore
-    dialogApi.setDialogApi().then(data =>
+    dialogApi.setDialogApi(id).then(data =>
       dispatch(setUserDialogPage(data))
     )
 

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import clases from './../DialogItem/DialogItem.module.scss';
+import clases from './../DialogItem/dialogItem.module.scss';
 import Preloader from "../../common/Prelouder/Preloader";
 import youtube from '../../../assets/img/in.jpeg'
+import StatusDialog from '../DialogItem/statusDialog/StatusDialog'
 
 const DialogItem = (props) => {
 
@@ -16,9 +17,10 @@ const DialogItem = (props) => {
             <div>{props.setUserDialog.aboutMe} </div>
 
             <div className={clases.DialogItemFoto}>
-
                 <img src={props.setUserDialog.photos.small} className={clases.imgIcon} alt="" />
-                
+                <div>
+                   < StatusDialog />
+                </div>
                 <Link to={path}>  </Link>
                 <div>{props.setUserDialog.contacts.youtube !== null ?
                     props.setUserDialog.contacts.youtube :

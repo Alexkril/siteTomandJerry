@@ -36,8 +36,8 @@ export const UserAri = {
     }
 }
 export const dialogApi = {
-    setDialogApi() {
-        return instanse.get(`profile/2`).
+    setDialogApi(id:string) {
+        return instanse.get(`profile/${id}`).
             //@ts-ignore
             then(response => response.data)
     }

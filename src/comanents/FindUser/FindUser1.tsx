@@ -19,10 +19,11 @@ const FindUser1 = () => {
     for (let i = 1; i <= pagesCountF; i++) { pages.push(i) }
     const currentPage = findUser.currentPageF
     const pageSizeF = findUser.pageSizeF
-    useEffect(() => {
-        //@ts-ignore
-        dispatch(FindUserApi.setUserFapi(currentPage, pageSizeF))
-    }, [])
+    //@ts-ignore
+    useEffect(() => { dispatch(FindUserApi.setUserFapi(currentPage, pageSizeF)) }, [])
+
+
+
 
 
 

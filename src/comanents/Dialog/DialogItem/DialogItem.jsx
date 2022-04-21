@@ -17,20 +17,20 @@ const DialogItem = (props) => {
             <div>{props.setUserDialog.aboutMe} </div>
 
             <div className={clases.DialogItemFoto}>
-                <img src={props.setUserDialog.photos.small} className={clases.imgIcon} alt="" />
+                <img src={props.setUserDialog.data.photos.small} className={clases.imgIcon} alt="" />
                 <div>
                    < StatusDialog />
                 </div>
                 <Link to={path}>  </Link>
-                <div>{props.setUserDialog.contacts.youtube !== null ?
-                    props.setUserDialog.contacts.youtube :
+                <div>{props.setUserDialog.data.contacts.youtube !== null ?
+                    props.setUserDialog.data.contacts.youtube :
                     <div className={clases.Icon} >
                         <img src={youtube} />
                     </div>}</div>
 
-                <div>{props.setUserDialog.contacts.twitter}</div>
+                <div>{props.setUserDialog.data.contacts.twitter}</div>
                 
-                <div>{props.setUserDialog.contacts.github}</div>
+                <div>{props.setUserDialog.data.contacts.github}</div>
             </div>
 
         </div>

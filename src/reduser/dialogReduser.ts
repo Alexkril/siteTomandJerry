@@ -3,8 +3,9 @@ import { dialogApi } from '../API/api'
 
 const NEV_MASSEGE_DATE = 'NEV_MASSEGE_DATE';
 const NEV_TEXT_DIALOG = 'NEV_TEXT_DIALOG';
-const SET_USER_DIALOG_PAGE = 'SET_USER_DIALOG_PAGE'
-
+const SET_USER_DIALOG_PAGE = 'SET_USER_DIALOG_PAGE';
+const SET_STATUS = 'SET_STATUS';
+const UPDATE_STATUS = 'UPDATE_STATUS';
 
 type massedesDataType = {
   id: number
@@ -42,8 +43,9 @@ let initialState = {
   DialogsData: [
     { id: 1, name: 'DialogName ' },
   ] as Array<DialogsDataType>,
-
-  setUserDialog: null as SetUserDialogType | null
+  setUserDialog: null as SetUserDialogType | null,
+  status: 'statusf' as string,
+  updateStatus: '' as string
 };
 
 export type initialStateType = typeof initialState
@@ -76,6 +78,18 @@ const dialogReduser = (state = initialState, action: any): initialStateType => {
         ...state, setUserDialog: action.setUser
       }
 
+    case SET_STATUS:
+      return {
+        ...state,
+        status: action.status
+      }
+
+    case UPDATE_STATUS:
+      return {
+        ...state,
+        updateStatus: action.userid
+      }
+
     default:
       return state;
   }
@@ -103,18 +117,32 @@ export type SetUserDialogPageActionType = {
 export const setUserDialogPage = (setUser: SetUserDialogType): SetUserDialogPageActionType =>
   ({ type: SET_USER_DIALOG_PAGE, setUser })
 
-export default dialogReduser;
-
-export const setDialogThuncCreetor = (id:string) => {
- // console.log('data1', dialogApi.setDialogApi())
-  //@ts-ignore
-  return (dispatch: any) => {
-    console.log('data', 1)
-    //@ts-ignore
-    dialogApi.setDialogApi(id).then(data =>
-      dispatch(setUserDialogPage(data))
-    )
-
-  }
-  
+type setStatus = {
+  type: typeof SET_STATUS,
+  userid: number
 }
+export const setStatus = (userid: number): setStatus => ({ type: SET_STATUS, userid })
+
+type updateStatus = {
+  type: typeof UPDATE_STATUS,
+  status: string
+}
+export const updateStatus = (status: string): updateStatus => ({ type: UPDATE_STATUS, status })
+
+// export const getStatusThuncCreetor = (userid: number) => (dispatch: any) => {
+//   return dialogApi.getStatusApi(userid).then((response: any) => {
+//     dispatch(setStatus(response.statusText));
+//     console.log('getStatusThuncCreetor', getStatusThuncCreetor)
+//   }
+//   )
+// }
+
+// export const updateStatusThuncCreetor = (status: string) => (dispatch: any) => {
+//   return dialogApi.updateStatusApi(status).then((response: any) => {
+//     if (response.data.resultCode === 0)
+//       dispatch(setStatus(Number(status)))
+//   }
+//   )
+// }
+
+export default dialogReduser;

@@ -26,26 +26,35 @@ export const UserAri = {
             .then(response => response.data)
     },
 
-    followUsreApi (id:any){
+    followUsreApi(id: any) {
         return instanse.post(`follow/${id}`)
-       
+
     },
-    unFollowUsreApi (id:any){
+    unFollowUsreApi(id: any) {
         return instanse.delete(`follow/${id}`)
-       
+
     }
 }
 export const dialogApi = {
-    setDialogApi(id:string) {
-        return instanse.get(`profile/${id}`).
-            //@ts-ignore
-            then(response => response.data)
+    setDialogApi(id: string) {
+        return instanse.get(`profile/${id}`)
+        //@ts-ignore
+
+    },
+    getStatusApi(userid: number) {
+        return instanse.get(`/profile/status/${userid}`)
+    },
+
+    updateStatusApi(status: string) {
+        return instanse.put(`profile/status`, { status: status })
     }
+
 }
 export const authAPI = {
     setAuth() {
         return instanse.get(`auth/me`)
-         //@ts-ignore
-        .then(response => response.data)
+            //@ts-ignore
+            .then(response => response.data)
     }
 }
+

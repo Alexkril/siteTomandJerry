@@ -2,13 +2,12 @@ import React from "react";
 import clases from '../Dialog/Dialogs.module.scss';
 import DialogItem from "./DialogItem/DialogItem";
 import { useSelector, useDispatch } from "react-redux";
-import { nevTextDialog, nevMassegeDate, setUserDialogPage, setDialogThuncCreetor, SetUserDialogType } from "../../reduser/dialogReduser";
+import { nevTextDialog, nevMassegeDate, setUserDialogPage, SetUserDialogType } from "../../reduser/dialogReduser";
 import { initialStateType } from '../../reduser/dialogReduser'
 import { AppStateType } from "../../redaxStore";
 import { useEffect } from "react";
 import { dialogApi } from '../../API/api'
 import { Navigate } from 'react-router-dom';
-import RegistrationForm from '../registrationForm/RegistrationForm'
 
 type PropsType = {
     messade: string
@@ -17,8 +16,6 @@ type PropsType = {
 }
 
 const Massedes = (props: PropsType) => {
-    console.log(props)
-
     return (
         <div className={clases.messade}>
             {props.massedes}
@@ -26,21 +23,11 @@ const Massedes = (props: PropsType) => {
     );
 }
 
-
-
 const Dialogs = () => {
-
-
-
-
-
     const dispatch = useDispatch()
 
     const user: initialStateType = useSelector((state: AppStateType) => state.dialogPage)
-    console.log('userDial', user)
-    //@ts-ignore
     const authMyId = useSelector((state: AppStateType) => state.auth.id)
-
 
     let massedesElement = user.massedesData
         .map((massedges) => <Massedes massedes={massedges.massedes} messade={""} />)
@@ -59,7 +46,6 @@ const Dialogs = () => {
     }
 
     let addMassage = (e: any) => {
-
         let text = e.target.value;
         dispatch(nevTextDialog(text))
     }
@@ -68,20 +54,14 @@ const Dialogs = () => {
     //  if (!authRederect) return <Navigate  to={'/login/'}/>
 
 
-    useEffect(() => {
-
-        // setDialogThuncCreetor()
+    useEffect(() => {        // setDialogThuncCreetor()
         // 
-        
-            dialogApi.setDialogApi(String(2)).then((data: SetUserDialogType) => {
-                dispatch(setUserDialogPage(data))
-            })
-        
-        //if (authMyId!==null) {}
-
+        dialogApi.setDialogApi(String(22937)).then((data: SetUserDialogType) => {
+            dispatch(setUserDialogPage(data))
+        })
     }, [])
-    return (
 
+    return (
         <div className={clases.Dialogs}>
             <div className={clases.DialogItems}>
                 {DialogsElenent}</div>
@@ -95,6 +75,7 @@ const Dialogs = () => {
                     />
                     <div>
                         <button onClick={onPostText}>отправить сообщение</button>
+
                     </div>
                 </div>
             </div>

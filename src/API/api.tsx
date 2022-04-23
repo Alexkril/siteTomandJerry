@@ -22,8 +22,8 @@ export const FindUserApi = {
 export const UserAri = {
     setUserApi(currentPage: number, pageSize: number) {
         return instanse.get(`users?page=${currentPage} &count=${pageSize}`)
-            //@ts-ignore
-            .then(response => response.data)
+           
+            .then((response:any) => response.data)
     },
 
     followUsreApi(id: any) {
@@ -38,7 +38,7 @@ export const UserAri = {
 export const dialogApi = {
     setDialogApi(id: string) {
         return instanse.get(`profile/${id}`)
-        //@ts-ignore
+      
 
     },
     getStatusApi(userid: number) {
@@ -53,8 +53,7 @@ export const dialogApi = {
 export const authAPI = {
     setAuth() {
         return instanse.get(`auth/me`)
-            //@ts-ignore
-            .then(response => response.data)
+            .then((response:any) => response.data)
     }
 }
 

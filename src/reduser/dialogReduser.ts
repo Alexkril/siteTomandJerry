@@ -26,7 +26,7 @@ type ContactsType = {
   mainLink: string
 }
 export type SetUserDialogType = {
-  userId: number
+  userId: number | null
   lookingForAJob: boolean
   lookingForAJobDescription: string
   fullName: string
@@ -44,8 +44,7 @@ let initialState = {
     { id: 1, name: 'DialogName ' },
   ] as Array<DialogsDataType>,
   setUserDialog: null as SetUserDialogType | null,
-  status: 'statusf' as string,
-  updateStatus: '' as string
+  status: '' as string,
 };
 
 export type initialStateType = typeof initialState
@@ -87,7 +86,7 @@ const dialogReduser = (state = initialState, action: any): initialStateType => {
     case UPDATE_STATUS:
       return {
         ...state,
-        updateStatus: action.userid
+        status: action.status
       }
 
     default:
@@ -119,9 +118,11 @@ export const setUserDialogPage = (setUser: SetUserDialogType): SetUserDialogPage
 
 type setStatus = {
   type: typeof SET_STATUS,
-  userid: number
+  status: string | null
 }
-export const setStatus = (userid: number): setStatus => ({ type: SET_STATUS, userid })
+export const setStatus = (status: string): setStatus => {
+  return { type: SET_STATUS, status: status }
+}
 
 type updateStatus = {
   type: typeof UPDATE_STATUS,
@@ -137,12 +138,12 @@ export const updateStatus = (status: string): updateStatus => ({ type: UPDATE_ST
 //   )
 // }
 
-// export const updateStatusThuncCreetor = (status: string) => (dispatch: any) => {
-//   return dialogApi.updateStatusApi(status).then((response: any) => {
-//     if (response.data.resultCode === 0)
-//       dispatch(setStatus(Number(status)))
-//   }
-//   )
-// }
+export const updateStatusThuncCreetor = (status: string) => (dispatch: any) => {
+  return dialogApi.updateStatusApi(status).then((response: any) => {
+    if (response.data.resultCode === 0)
+      dispatch(updateStatus(status))
+  }
+  )
+}
 
 export default dialogReduser;

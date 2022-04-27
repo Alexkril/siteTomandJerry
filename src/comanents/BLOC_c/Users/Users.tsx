@@ -25,7 +25,13 @@ const Users = (props: any) => {
                     onClick={(e) => { props.onPostChanget(p) }} > {p} </span>
             })} */}
 
-            {props.usersPage.map((u: { id: React.Key | null | undefined; photos: { small: string | null | undefined; }; followed: any; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; status: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }) => {
+            {props.usersPage.map((u: {
+                id: React.Key | null | undefined;
+                photos: { small: string | null | undefined; };
+                followed: any;
+                name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined;
+                status: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined;
+            }) => {
 
                 return <div key={u.id}>
 
@@ -40,13 +46,13 @@ const Users = (props: any) => {
                                 </NavLink>
                                 <div className={c.button}>
                                     {u.followed ?
-                                  
-                                        < button disabled={props.follofing.some((id:number)=>id===u.id)} onClick={() => {
+
+                                        < button disabled={props.follofing.some((id: number) => id === u.id)} onClick={() => {
                                             //@ts-ignore
                                             props.unFollow(u.id)
                                             // props.followingIsFetching(true, u.id)
                                             // UserAri.unFollowUsreApi(u.id)
-                                           
+
                                             //     .then((response:any) => {
                                             //         if (response.data.resultCode == 0) {
                                             //             props.follow(u.id)
@@ -56,7 +62,7 @@ const Users = (props: any) => {
 
                                         }}> unfollow</button> :
 
-                                        <button disabled={props.follofing.some((id:number)=>id===u.id)} onClick={() => {
+                                        <button disabled={props.follofing.some((id: number) => id === u.id)} onClick={() => {
                                             //@ts-ignore
                                             props.follow(u.id)
                                             // props.followingIsFetching(true, u.id)

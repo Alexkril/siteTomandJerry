@@ -8,9 +8,7 @@ import Reviews from './../../../Reviews/Reviews';
 import { Route, Routes } from "react-router-dom";
 import Dialogs from "../../../Dialog/Dialogs";
 import Test1Container from "../../Test1/Test1Container";
-import GalereyaContainer from '../../../Galereya/GalereyaContainer'
 import UsersContainer from "../../Users/UsersContainer";
-import Test3Container from "../../../Test3/Test3Container";
 import FindUserContainer from "../../../FindUser/FindUserContainer";
 import RegistrationForm from "../../../registrationForm/RegistrationForm";
 
@@ -24,8 +22,8 @@ const BlocPage = (props) => {
                     <Route path="/" element={<BlokInfo />} />
                     <Route path="/Grum/" element={<Grum />} />
                     <Route path="/Price/" element={<Price />} />
-                    <Route path="/Galereya/" element={<GalereyaContainer
-                        store={props.store} />}
+                    <Route path="/Galereya/" element={<Galereya />}
+                   
                     />
                     <Route
                         path="/Reviews/"

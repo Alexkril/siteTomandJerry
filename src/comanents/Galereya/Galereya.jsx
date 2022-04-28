@@ -9,38 +9,40 @@ const Galereya = (props) => {
 
     const dispatch = useDispatch
     const re = useSelector(state => state.galereya.galeryMassegeDate)
-   // console.log('fjfjfjfjf', re)
     const formik = useFormik({
         initialValues: {
-            addPost: 'string'
+            email: '',
+            // password: '',
+            // lastName: '',
         },
-        onSabmit: (value) => {
-            // e.preventDefault();
-            // console.log('formik', values)
-            dispatch(nevGaleryMassegeCreator(value.addPost))
-        }
-    })
-    console.log('formif', formik.values.addPost)
 
+        onSubmit: values => {
+            //alert(JSON.stringify(values, null, 2));
+            dispatch(nevGaleryMassegeCreator(values.email))
+            console.log('f', formik.values.email)
+        },
+    });
 
     return (
         <div>
             <div className={clases.galereya}><h2>галерея</h2></div>
             <div>
                 <form onSubmit={formik.handleSubmit} className={clases.formikStyle}>
-                    <label htmlFor="addPost">Email Address</label>
+                    <label htmlFor="email">Email Address</label>
                     <input
-                        id="addPost"
-                        name="addPost"
+                        id="email"
+                        name="email"
                         type="text"
                         onChange={formik.handleChange}
-                        value={formik.values.addPost}
+                        value={formik.values.email}
+
                     />
                     <button type="submit">Submit</button>
                 </form>
 
+
                 {re.map(g => {
-                    return <div> {g.text}   </div>
+                    return <div> {g.email}   </div>
                 })}
             </div>
         </div >

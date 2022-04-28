@@ -1,6 +1,33 @@
-.PriceContey{
- 
+.PriceContey {
   align-items: center;
-  
-  
+}
+.PriceConteyBlock {
+  width: 750px;
+  height: auto;
+  background: #efefef;
+  border: 1px solid hsl(0, 0%, 62%);
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.PriceFoto {
+  img {
+    width: 200px;
+  }
+
+  .scale {
+    transition: 1s; /* Время эффекта */
+  }
+  .scaleActiv {
+    transform: scale(1.5); /* Увеличиваем масштаб */
+    border-radius: 20px;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+  }
+}
+.PriceFotoD{
+  border-radius:80px;
 }

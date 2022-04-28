@@ -12,17 +12,17 @@ import clases from './../Grum/grum.module.scss'
 // export default FormikForm
 
 const SignupForm = () => {
-    // Pass the useFormik() hook initial form values and a submit function that will
-    // be called when the form is submitted
+    
     const formik = useFormik({
         initialValues: {
             email: '',
-            password: '',
-            lastName: '',
+            // password: '',
+            // lastName: '',
         },
 
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+           //alert(JSON.stringify(values, null, 2));
+            console.log('f', formik.values.email)
         },
     });
 
@@ -32,12 +32,12 @@ const SignupForm = () => {
             <input
                 id="email"
                 name="email"
-                type="email"
+                type="text"
                 onChange={formik.handleChange}
                 value={formik.values.email}
             />
 
-            <div>
+            {/* <div>
             <label htmlFor="password">Email password</label>
                 <input
                     id="password"
@@ -47,8 +47,8 @@ const SignupForm = () => {
                     onChange={formik.handleChange}
                     value={formik.values.password}
                     />
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
                 <label htmlFor="lastName">lastName</label>
                 <input 
                 id= "lastName"
@@ -58,7 +58,7 @@ const SignupForm = () => {
                 value={formik.values.lastName}
                 />
 
-            </div>
+            </div> */}
             <button type="submit">Submit</button>
         </form>
 

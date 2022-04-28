@@ -1,34 +1,41 @@
-import React from "react";
-import ClassTvari from "../VidTvari/ClassTvari";
-import PriceFoto from "../PriceFoto/PriceFoto";
+import React, { useState } from "react";
 import clases from "./PriceContey.module.scss"
+import imgPrFoto from './../../../assets/galery/y5.jpg'
+import classNames from "classnames";
+
 
 
 const PriceContey = (props) => {
- return(
+  const [transfomfFoto, setTransfomfFoto] = useState(false)
+  const [trans, setTrans] = useState(false)
+ 
 
+  return (
     <div className={clases.PriceContey}>
-      <div className='PriceConteyBlock'>
-      <ClassTvari  wock='маленькие породы собак: (купание, сушка, стрижка,гигиена)' price=' от 800 рубл' />      
-      <PriceFoto /> 
-      </div>
-      <div className='PriceConteyBlock'>
-      <ClassTvari  wock='средние породы собак: (купание, сушка, стрижка,гигиена)' price=' от 1000 рубл' />      
-      <PriceFoto/>
-      </div>
-      <div className='PriceConteyBlock'>
-      <ClassTvari  wock='крупные породы собак: (купание, сушка, стрижка,гигиена)' price=' от 1500 рубл' />      
-      {/* <PriceFoto/>
-       */}
-      </div>
-      <div className='PriceConteyBlock'>
-      <ClassTvari  wock=' коты: (купание, сушка, стрижка,гигиена)' price=' от 1000 рубл' />      
-      {/* <PriceFoto/> */}
-      </div>
 
-</div> 
+      <div className={clases.PriceConteyBlock}>
+        <div>
+          маленькие породы собак: (купание, сушка, стрижка,гигиена)
+        </div>
+        <div onClick={()=>setTrans(!trans)}>
+           от 800 рубл
+        </div>
 
-);
+        <div className={clases.PriceFoto}>
+          <div className={clases.PriceFoto}>
+            <div onClick={() => setTransfomfFoto(!transfomfFoto)} >
+              <img src={imgPrFoto} alt="dog" className={classNames(clases.PriceFoto,
+               transfomfFoto ? clases.scaleActiv : '', trans? clases.PriceFotoD:''
+              )} />
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  );
 
 }
 export default PriceContey;

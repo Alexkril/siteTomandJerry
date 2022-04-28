@@ -1,63 +1,55 @@
-const NEV_TEXT_GALERY = "NEV_TEXT_GALERY"
 const NEV_GALERY_MASSEGE_DATE = "NEV_GALERY_MASSEGE_DATE"
 
-type GaleryMassegeDate ={
+type GaleryMassegeDate = {
   id: number
-  text: string
+  email: string
 }
 
 let initialState = {
   galeryMassegeDate: [
     {
       id: 1,
-      text: "текст галерея"
+      email: "текст галерея"
     }
-  ] as  Array<GaleryMassegeDate>,
+    
+  ] as Array<GaleryMassegeDate>,
+
 };
 
 export type InitialStateGalery = typeof initialState
 
 const galeryReduser = (state = initialState, action: ActionsNevGaleryType) => {
+   console.log('state', state)
   switch (action.type) {
 
     case NEV_GALERY_MASSEGE_DATE: {
-      let body = action.addPost;
+      let massege = {
+        id: 5,
+        email: action.email,
+      }
       return {
         ...state,
-        galeryMassegeDate: [...state.galeryMassegeDate, { id: 5, text: body }]
+        galeryMassegeDate: [...state.galeryMassegeDate, massege]
       }
-
     }
-    // case NEV_TEXT_GALERY:
-    //   return {
-    //     ...state,
-    //     addGaleryMassege: action.text
-    //   }
 
     default:
       return state;
   }
+
 }
 export default galeryReduser;
 
 
 
-type ActionsNevGaleryType = NevGaleryMassegeCreatorActionType 
-//| NevTextGaleryCreaatorActionType
+type ActionsNevGaleryType = NevGaleryMassegeCreatorActionType
 export type NevGaleryMassegeCreatorActionType = {
   type: typeof NEV_GALERY_MASSEGE_DATE,
-  addPost: string
+  email: string
 }
-export const nevGaleryMassegeCreator = (addPost:string): NevGaleryMassegeCreatorActionType =>
- ({ type: NEV_GALERY_MASSEGE_DATE, addPost })
+export const nevGaleryMassegeCreator = (email: string): NevGaleryMassegeCreatorActionType => { 
+  console.log('addPost', email)
+   return ({ type: NEV_GALERY_MASSEGE_DATE, email })
+}
 
-// export type NevTextGaleryCreaatorActionType = {
-//   type: typeof NEV_TEXT_GALERY
-//   text: string
-// }
-// export const nevTextGaleryCreaator = (text: string): NevTextGaleryCreaatorActionType => {
-//   return {
-//     type: NEV_TEXT_GALERY, text: text
-//   }
-// }
 

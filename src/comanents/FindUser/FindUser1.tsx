@@ -44,8 +44,6 @@ const FindUser1 = () => {
             {
                 findUser.users.map(u => <div key={u.id}>
                     <div className={s.findUser}>
-
-
                         <div>
                             <div>{u.name}</div>
                             <img src={u.photos.small != null ? u.photos.small : userphoto}

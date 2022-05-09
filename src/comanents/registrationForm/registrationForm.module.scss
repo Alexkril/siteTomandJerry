@@ -1,6 +1,25 @@
-.registrationForm{
+.registrationForm {
   margin: 0 auto;
   width: 800px;
   padding: 15px;
   background: gray;
+  border-radius: 5px;
+  color: aliceblue;
+  input {
+    margin: 10px 0 10px 0;
+    color: black;
+    padding: 0 5px;
+  }
+  button {
+    color: black;
+  }
+  label {
+    margin: 0 0 0 15px;
+  }
+  .Field {
+    margin: 0 10 0 10 px;
+  }
+}
+.ErrorMessage {
+  color: red;
 }

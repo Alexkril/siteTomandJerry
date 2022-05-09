@@ -67,7 +67,7 @@ const usersReduser = (state = initialState, action: any): initialStateUser => {
                 ...state,
                 //@ts-ignore
                 follofingProgres: action.following ? [...state.follofingProgres, action.userid] :
-                    [state.follofingProgres.filter(id => id != action.userid)]
+                    [state.follofingProgres.filter(id => id !== action.userid)]
 
 
 
@@ -122,7 +122,7 @@ export const follow = (userid: number) => (dispatch: any) => {
     dispatch(followingIsFetching(true, userid))
     UserAri.followUsreApi(userid)
         .then((response: any) => {
-            if (response.data.resultCode == 0) { dispatch(unFollowSuccsess(userid)) }
+            if (response.data.resultCode === 0) { dispatch(unFollowSuccsess(userid)) }
             dispatch(followingIsFetching(false, userid))
         })
 }
@@ -131,7 +131,7 @@ export const unFollow = (userid: number) => (dispatch: any) => {
     UserAri.unFollowUsreApi(userid)
 
         .then((response: any) => {
-            if (response.data.resultCode == 0) {
+            if (response.data.resultCode === 0) {
                 dispatch(followSuccsess(userid))
             }
             dispatch(followingIsFetching(false, userid))

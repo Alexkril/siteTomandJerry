@@ -5,6 +5,7 @@ import galeryReduser from "./reduser/galeryReduser";
 import usersReduser from "./reduser/usersReduser";
 import findUserReduser from "./reduser/FindUserReduser";
 import authReduser from "./reduser/authReduser";
+import priceReduser from "./reduser/priceReduser";
 import thunkMiddleware from 'redux-thunk'
 
 let rootRedusers = combineReducers({
@@ -13,7 +14,8 @@ let rootRedusers = combineReducers({
     galereya: galeryReduser,
     usersPage: usersReduser,
     findUser: findUserReduser,
-    auth: authReduser
+    auth: authReduser,
+    price: priceReduser
 })
 
 type RootRedusersType = typeof rootRedusers

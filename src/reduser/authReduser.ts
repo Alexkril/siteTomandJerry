@@ -36,17 +36,24 @@ export let setUserData = (id: number, email: string, login: string, isAuhs: bool
 
 export default authReduser
 
-// export const getAuthThunkCreetor = () =>{ 
-//     return (dispatch: any) => {
-//        return  authAPI.setAuth()
-//        //@ts-ignore
-//            .then(data => {if (data.resultCode === 0) {
-//                //@ts-ignore
-//                    let { id, email, login } = data.data  
-//                    //@ts-ignore
-//                    dispatch(setUserData(id, email, login))
+export const getAuthThunkCreetor = () =>{ 
+    return (dispatch: any) => {
+       return  authAPI.setAuth()
+           .then((data:any) => {if (data.resultCode === 0) {
+                   let { id, email, login, isAuhs } = data.data  
+                   dispatch(setUserData(id, email, login, isAuhs))
                   
-//                }
-//            })
-// }
-// }
+               }
+           })
+  
+}
+}
+export const loginThunc =(email: string, password: string, rememberMe: string)=>(dispatch:any)=>{
+return authAPI.login(email, password, rememberMe).then((response: any)=>{
+    if(response.data.resultCode===0){
+       // dispatch(setUserData())
+    }
+}
+
+)
+}

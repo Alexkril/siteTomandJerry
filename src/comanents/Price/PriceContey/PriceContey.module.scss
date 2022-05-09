@@ -15,6 +15,7 @@
 .PriceFoto {
   img {
     width: 200px;
+    border-radius: 10px;
   }
 
   .scale {
@@ -27,7 +28,12 @@
     z-index: 10;
     left: 50%;
   }
+
+  .PriceFotoD {
+    border-radius: 80px;
+    transition: 1s;
+  }
 }
-.PriceFotoD{
-  border-radius:80px;
+.form, button {
+  margin: 0 0 0 10px;
 }
